@@ -1,5 +1,8 @@
 # DE-[NUMBER]: [What Was Tried]
 
+> **Inspired by:** NASA Lessons Learned Information System (LLIS) — [appel.nasa.gov/lessons-learned](https://appel.nasa.gov/lessons-learned)  
+> **Further reading:** [Reference Reading — Section 5: NASA LLIS](../00_system_design/06_reference_reading.md#5-nasa-lessons-learned-information-system)
+
 **Date Closed:** [YYYY-MM-DD]  
 **Closed By:** [Name]  
 **Related Experiments:** [EXP-XXX]  

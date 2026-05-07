@@ -1,5 +1,8 @@
 # ADR-[NUMBER]: [Decision Title]
 
+> **Format based on:** Michael Nygard's ADR format ([cognitect.com, 2011](https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions))  
+> **Further reading:** [Reference Reading — Section 2: ADRs](../00_system_design/06_reference_reading.md#2-architecture-decision-records-adrs)
+
 **Status:** Proposed | Accepted | Deprecated | Superseded by ADR-XXX  
 **Date:** [YYYY-MM-DD]  
 **Deciders:** [Names / Roles]  

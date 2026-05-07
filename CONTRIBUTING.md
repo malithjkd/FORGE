@@ -8,6 +8,9 @@ This guide covers how to contribute to a FORGE-managed R&D project. Whether you 
 
 ## Onboarding (SOP-001)
 
+> **Full SOP:** See [sops/SOP-001-onboarding.md](./sops/SOP-001-onboarding.md) for the complete checklist.  
+> **All SOPs:** The `sops/` folder contains standalone versions of all Standard Operating Procedures (SOP-001 through SOP-006).
+
 ### Day 1 — Orientation
 
 - [ ] Obtain access to the GitHub repository
@@ -63,6 +66,67 @@ This guide covers how to contribute to a FORGE-managed R&D project. Whether you 
 - [ ] Create a Dead-End entry (`DE-XXX`) if a dead end was reached
 - [ ] Create a Technique Note (`TN-XXX`) if a reusable technique was established
 - [ ] Post a 3-sentence summary in the team communication channel
+
+---
+
+## How an Experiment Flows Through FORGE
+
+```mermaid
+stateDiagram-v2
+    [*] --> Backlog: Idea identified
+    Backlog --> Proposed: Proposal written
+    Proposed --> Approved: Review via PR
+    Approved --> InProgress: Work begins
+
+    InProgress --> Completed: Hypothesis confirmed ✅
+    InProgress --> DeadEnd: Hypothesis refuted ❌
+    InProgress --> Inconclusive: Needs more data ⚠️
+
+    Completed --> TechniqueNote: Reusable method extracted
+    Completed --> ADR: Design decision documented
+    Completed --> RadarUpdate: Technique assessed
+    Completed --> NextExperiment: Follow-on proposed
+
+    DeadEnd --> DEEntry: Dead-end documented
+    DeadEnd --> RadarUpdate
+    DeadEnd --> NextExperiment
+
+    Inconclusive --> Backlog: Re-scoped experiment
+
+    TechniqueNote --> [*]
+    ADR --> [*]
+    DEEntry --> [*]
+    RadarUpdate --> [*]
+    NextExperiment --> Backlog
+```
+
+---
+
+## How Document Types Connect
+
+Every experiment produces documents that reference and feed into each other. This interconnection is what makes FORGE compound knowledge rather than scatter it.
+
+```mermaid
+graph LR
+    EXP["EXP-XXX\nExperiment"] -->|"produces"| TN["TN-XXX\nTechnique Note"]
+    EXP -->|"produces"| DE["DE-XXX\nDead End"]
+    EXP -->|"informs"| ADR["ADR-XXX\nDecision Record"]
+    EXP -->|"updates"| RADAR["Technology\nRadar"]
+    EXP -->|"feeds"| BACKLOG["Research\nBacklog"]
+
+    TN -->|"referenced by"| EXP
+    DE -->|"prevents repeat in"| EXP
+    ADR -->|"constrains"| EXP
+    RADAR -->|"prioritises"| BACKLOG
+    BACKLOG -->|"becomes"| EXP
+
+    LIT["Literature\n(Zotero)"] -->|"cited in"| TN
+    LIT -->|"cited in"| EXP
+    LIT -->|"cited in"| ADR
+
+    DATA["Datasets\n(DVC)"] -->|"used by"| EXP
+    EXP -->|"produces"| DATA
+```
 
 ---
 

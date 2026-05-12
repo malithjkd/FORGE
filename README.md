@@ -1,6 +1,10 @@
 # FORGE — Foundation for Organized Research Groups and Enterprise
 
-> A knowledge architecture and compound learning system for managing R&D projects that outlive any single person, idea, or technology choice.
+### The Philosophy of Continuity
+
+> *“If I have seen further, it is by standing on the shoulders of Giants.”*
+>
+> — **Isaac Newton** (1642–1727)
 
 ---
 
@@ -8,7 +12,7 @@
 
 FORGE is a **reusable blueprint** for organizing R&D knowledge so that it compounds over time. Instead of treating research as a linear project with a fixed endpoint, FORGE treats **knowledge as the primary output** — products, prototypes, and tools are valuable byproducts of accumulated understanding.
 
-FORGE was created to support university coloborations with industry, but the architecture is **project-agnostic** — it can be instantiated for any R&D initiative. FORGE formal backing can be provided by [The Knowledge Creating Company](https://lumsa.it/sites/default/files/UTENTI/u95/LM51_ITA_The%20Knowledge-Creating%20Company.pdf).
+FORGE was created to support university coloborations with industry, but the architecture is **project-agnostic** — it can be instantiated for any R&D initiative. The theoretical framework of FORGE is grounded in the principles of [The Knowledge Creating Company](https://lumsa.it/sites/default/files/UTENTI/u95/LM51_ITA_The%20Knowledge-Creating%20Company.pdf).
 
 ### Core Principles
 

@@ -51,7 +51,7 @@ graph TB
 |------------|----------------|--------------|
 | **Socialisation** | Monthly Reviews (SOP-005), Lab sessions, Pair experiments | Tacit knowledge passes between experienced and new researchers through shared practice |
 | **Externalisation** | Technique Notes, Experiment Reports, Dead-End Registry | Tacit knowledge (intuitions, failure instincts, domain feel) is captured in structured documents |
-| **Combination** | Technology Radar, ADRs, Literature integration via Zotero | Multiple explicit knowledge sources are synthesised into strategic views |
+| **Combination** | Technology Radar, ADRs, Literature integration via Mendeley | Multiple explicit knowledge sources are synthesised into strategic views |
 | **Internalisation** | Onboarding (SOP-001), Reproducing TNs, Running backlog experiments | New contributors absorb explicit knowledge and convert it back to personal tacit understanding |
 
 #### Why This Matters for PBA Specifically
@@ -201,7 +201,7 @@ Examined 174 articles from 108 journals to identify what actually works in KM im
 
 ## 7. University-Industry Collaboration Research
 
-Three papers directly relevant to the PBA–University of Moratuwa structure:
+Three papers directly relevant to the PBA–University partnership structure:
 
 ### N4S Programme Study
 
@@ -284,7 +284,41 @@ graph TD
 | NASA LLIS | `knowledge-commons/dead-end-registry/_TEMPLATE_dead_end.md`, `sops/SOP-004-dead-end-documentation.md` |
 | ThoughtWorks Radar | `technology-radar/radar.md`, `sops/SOP-003-technology-radar.md` |
 | N4S / JTT papers | `00_system_design/04_collaboration_protocol.md` |
+| ISO 13374 | `00_system_design/09_ISO13374_mapping.md` |
+| FAIR Principles | `sops/SOP-007-FAIR-data-compliance.md`, `data/METADATA_TEMPLATE.md` |
+| PM.UIC Framework | `00_system_design/04_collaboration_protocol.md` |
+| PMBOK / Agile-Scrum | `00_system_design/08_research_lifecycle.md` |
 
 ---
 
-*This reference list is a living document. Add new sources as they are discovered. Every academic paper referenced here should also be added to the shared Zotero library for team-wide access.*
+## 8. ISO & Domain Standards
+
+### Condition Monitoring Standards
+
+> **ISO 13374-1:2003** — *Condition monitoring and diagnostics of machines — Data processing, communication and presentation — Part 1: General guidelines*
+
+Defines the 6-layer data processing chain that FORGE's research lifecycle maps to. See [09_ISO13374_mapping.md](./09_ISO13374_mapping.md) for the full FORGE ↔ ISO alignment.
+
+> **ISO 17359:2018** — *Condition monitoring and diagnostics of machines — General guidelines*
+
+Guides selection of monitoring parameters. Referenced when justifying signal choices in Experiment Proposals.
+
+> **ISO 13379-1:2012** — *Condition monitoring and diagnostics of machines — Data interpretation and diagnostics techniques*
+
+Informs feature engineering methodology. Referenced in [TN-001](../knowledge-commons/technique-notes/TN-001-ISO-Feature-Extraction.md).
+
+### FAIR Data Principles
+
+> **Wilkinson, M.D. et al. (2016).** *The FAIR Guiding Principles for scientific data management and stewardship.* Scientific Data, 3, 160018.
+
+The foundational paper for FAIR data management. Implemented in FORGE via [SOP-007](../sops/SOP-007-FAIR-data-compliance.md) and the [METADATA_TEMPLATE](../data/METADATA_TEMPLATE.md).
+
+### Project Management for UICs
+
+> **Fernandes, G. et al. (2022).** *Project management practices in major university-industry R&D collaboration programs.* PMC. Available: https://pmc.ncbi.nlm.nih.gov/articles/PMC8915151/
+
+The PM.UIC framework — most directly applicable to FORGE's university-industry collaboration model. Referenced in [04_collaboration_protocol.md](./04_collaboration_protocol.md).
+
+---
+
+*This reference list is a living document. Add new sources as they are discovered. Every academic paper referenced here should also be added to the shared Mendeley library for team-wide access.*

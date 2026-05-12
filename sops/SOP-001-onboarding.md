@@ -10,7 +10,7 @@
 
 ```mermaid
 flowchart TB
-    subgraph UOM["University of Moratuwa"]
+    subgraph UOM["University Partner"]
         S1["MSc Student 1\n(Track: Data Collection)"]
         S2["MSc Student 2\n(Track: ML Diagnosis)"]
         AP["Academic Panel\n(3 supervisors)"]
@@ -24,7 +24,7 @@ flowchart TB
 
     subgraph FORGE_SYS["FORGE System"]
         REPO["GitHub Repository"]
-        ZOT["Zotero Library"]
+        ZOT["Mendeley Library"]
         DVC_S["DVC Data Store"]
     end
 
@@ -53,18 +53,23 @@ flowchart TB
 ## Day 1 — Orientation
 
 - [ ] Provide access to GitHub repository
-- [ ] Provide access to Zotero group library
+- [ ] Provide access to Mendeley group library
 - [ ] Provide access to DVC data storage
 - [ ] Walk through repository structure (30-minute session)
 - [ ] Assign reading: `README.md`, `CONTRIBUTING.md`, `knowledge-commons/domain-glossary.md`
 - [ ] Assign reading: 3 completed Experiment Reports most relevant to their track
+- [ ] Assign reading: [Collaboration Protocol](../00_system_design/04_collaboration_protocol.md) — IP ownership & publication rules
+- [ ] 1-hour IP awareness briefing with Research Lead (publication review process, data ownership, NDA)
+- [ ] Register ORCID at [orcid.org](https://orcid.org) ([SOP-007](./SOP-007-FAIR-data-compliance.md))
+- [ ] Understand escalation paths ([SOP-008](./SOP-008-collaboration-communication.md))
 
 ## Week 1 — Shadowing
 
 - [ ] Attend one active experiment review session
-- [ ] Read 5 papers from Zotero library (assigned by supervisor)
+- [ ] Read 5 papers from Mendeley library (assigned by supervisor)
 - [ ] Review the Technology Radar current state (`technology-radar/radar.md`)
 - [ ] Identify one existing Technique Note and verify they can reproduce it
+- [ ] Review [Research Lifecycle](../00_system_design/08_research_lifecycle.md) — understand the 15-stage model
 
 ## Week 2 — First Contribution
 
@@ -78,3 +83,4 @@ flowchart TB
 - [ ] All work documented in FORGE **before** presenting results in any meeting
 - [ ] Monthly contribution of at least one document (TN, ADR, DE, or Experiment Report)
 - [ ] Any decision made in a meeting or chat must be captured in a document within 48 hours
+- [ ] FAIR compliance on all data produced ([SOP-007](./SOP-007-FAIR-data-compliance.md))

@@ -18,7 +18,7 @@ The Key Signature Test is a foundational experiment for FORGE. Its purpose is to
 This experiment builds on:
 - EXP-001 (POC results)
 - Domain knowledge from ACS DPM functions
-- Literature on vibration-based fault detection (see Zotero library)
+- Literature on vibration-based fault detection (see Mendeley library)
 
 ## Method
 

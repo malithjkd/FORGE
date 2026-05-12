@@ -19,7 +19,7 @@ Depends on: EXP-002 (labelled data) and EXP-003 (data quality)
 
 References:
 - Technology Radar: FFT currently at "Assess"
-- Zotero library: [assign relevant papers]
+- Mendeley library: [assign relevant papers]
 
 ## Method
 

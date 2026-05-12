@@ -14,7 +14,7 @@ This guide covers how to contribute to a FORGE-managed R&D project. Whether you 
 ### Day 1 — Orientation
 
 - [ ] Obtain access to the GitHub repository
-- [ ] Obtain access to the Zotero group library (for academic references)
+- [ ] Obtain access to the Mendeley group library (for academic references)
 - [ ] Obtain access to the DVC data storage (for datasets and model checkpoints)
 - [ ] Walk through the repository structure (30-minute session with the Research Coordinator)
 - [ ] Read: `README.md`, this `CONTRIBUTING.md`, and `knowledge-commons/domain-glossary.md`
@@ -23,7 +23,7 @@ This guide covers how to contribute to a FORGE-managed R&D project. Whether you 
 ### Week 1 — Shadowing
 
 - [ ] Attend one active experiment review session
-- [ ] Read 5 papers from the Zotero library (assigned by supervisor)
+- [ ] Read 5 papers from the Mendeley library (assigned by supervisor)
 - [ ] Review the Technology Radar current state (`technology-radar/radar.md`)
 - [ ] Identify one existing Technique Note and verify you can reproduce it
 
@@ -62,6 +62,8 @@ This guide covers how to contribute to a FORGE-managed R&D project. Whether you 
 - [ ] Move your proposal from `experiments/active/` to `experiments/complete/`
 - [ ] Commit all data with DVC and push
 - [ ] Commit all code and push
+- [ ] Complete FAIR compliance checklist in the report ([SOP-007](./sops/SOP-007-FAIR-data-compliance.md))
+- [ ] Tag ISO 13374 layer(s) if applicable ([09_ISO13374_mapping.md](./00_system_design/09_ISO13374_mapping.md))
 - [ ] Update the Technology Radar if a technique was newly assessed
 - [ ] Create a Dead-End entry (`DE-XXX`) if a dead end was reached
 - [ ] Create a Technique Note (`TN-XXX`) if a reusable technique was established
@@ -120,7 +122,7 @@ graph LR
     RADAR -->|"prioritises"| BACKLOG
     BACKLOG -->|"becomes"| EXP
 
-    LIT["Literature\n(Zotero)"] -->|"cited in"| TN
+    LIT["Literature\n(Mendeley)"] -->|"cited in"| TN
     LIT -->|"cited in"| EXP
     LIT -->|"cited in"| ADR
 
@@ -158,6 +160,18 @@ graph LR
 2. **Dead ends are mandatory** — No approach may be declared "we already tried that" without a `DE-XXX` entry to prove it.
 3. **Templates are not optional** — Use the provided templates. They exist to ensure consistency and completeness.
 4. **Conversations are ephemeral; documents are permanent** — Any decision from a meeting or chat must be captured in a document within 48 hours.
+5. **FAIR compliance is expected** — All data must have metadata and be DVC-tracked ([SOP-007](./sops/SOP-007-FAIR-data-compliance.md)).
+6. **IP awareness** — Understand the [Collaboration Protocol](./00_system_design/04_collaboration_protocol.md) before sharing any work externally.
+
+---
+
+## Additional SOPs
+
+| SOP | Purpose |
+|-----|---------|  
+| [SOP-007: FAIR Data Compliance](./sops/SOP-007-FAIR-data-compliance.md) | Data governance and metadata standards |
+| [SOP-008: Collaboration Communication](./sops/SOP-008-collaboration-communication.md) | Meeting cadence, async protocols, escalation |
+| [SOP-009: Research Lifecycle](./sops/SOP-009-research-lifecycle.md) | Navigating the 15-stage research lifecycle |
 
 ---
 

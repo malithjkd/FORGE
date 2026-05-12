@@ -47,6 +47,25 @@
 | **Compounding Knowledge** | The property of a knowledge system where each new piece of work builds on and amplifies prior work, rather than starting from scratch. |
 | **DVC (Data Version Control)** | An open-source tool for versioning large datasets and model files alongside Git, storing actual data in a separate backend. |
 
+## Standards & Compliance Terms
+
+| Term | Definition |
+|---|---|
+| **FAIR** | Data management principles: **F**indable, **A**ccessible, **I**nteroperable, **R**eusable. See [SOP-007](../sops/SOP-007-FAIR-data-compliance.md). |
+| **ISO 13374** | International standard for condition monitoring data processing — defines a 6-layer chain from data acquisition to advisory generation. See [09_ISO13374_mapping.md](../00_system_design/09_ISO13374_mapping.md). |
+| **ISO 17359** | Standard for selecting monitoring parameters and measurement types for condition monitoring. |
+| **DOI (Digital Object Identifier)** | A persistent identifier assigned to datasets and publications, ensuring long-term findability. Minted via Zenodo. |
+| **ORCID** | A unique researcher identifier ([orcid.org](https://orcid.org)). Required for all FORGE contributors and journal submissions. |
+| **Zenodo** | CERN-operated open-access repository for archiving datasets and code with persistent DOIs. |
+| **Dublin Core** | A metadata standard (ISO 15836) with 15 core elements used for FORGE dataset metadata. |
+| **MLOps** | Practices for deploying and maintaining ML models in production — model registry, CI/CD, monitoring, retraining. |
+| **DevOps** | Practices for infrastructure automation, containerisation, deployment, and observability. |
+| **Stage Gate** | A formal review point in the research lifecycle where progress is assessed before proceeding to the next phase. |
+| **PM.UIC** | Project Management framework for University-Industry Collaboration (Fernandes et al., 2022). |
+| **RACI Matrix** | Responsibility assignment: **R**esponsible, **A**ccountable, **C**onsulted, **I**nformed. Used in the [Collaboration Protocol](../00_system_design/04_collaboration_protocol.md). |
+| **Pre-mortem** | A risk analysis technique where the team imagines the experiment has failed and identifies likely causes *before* starting. |
+| **Blameless Post-mortem** | A retrospective focused on system/process causes of failure, not individual blame. See [05_failure_integration.md](../00_system_design/05_failure_integration.md). |
+
 ---
 
 *Add new terms as they arise. Keep definitions concise and accessible to someone joining the project for the first time.*

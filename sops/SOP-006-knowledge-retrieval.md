@@ -24,7 +24,7 @@ graph LR
     RADAR -->|"prioritises"| BACKLOG
     BACKLOG -->|"becomes"| EXP
 
-    LIT["Literature (Zotero)"] -->|"cited in"| TN
+    LIT["Literature (Mendeley)"] -->|"cited in"| TN
     LIT -->|"cited in"| EXP
     LIT -->|"cited in"| ADR
 
@@ -58,8 +58,8 @@ Look in `knowledge-commons/decision-records/` for prior design choices.
 
 **Ask:** Has a decision already been made about this approach?
 
-### Step 5: Search Zotero Library
-Search the shared Zotero group library for academic literature.
+### Step 5: Search Mendeley Library
+Search the shared Mendeley group library for academic literature.
 
 **Ask:** What does the published research say about this approach?
 
@@ -83,7 +83,7 @@ After completing all six steps, if you still cannot find relevant information:
 2. knowledge-commons/dead-end-registry/ → Has this failed?
 3. knowledge-commons/technique-notes/   → Is there a method?
 4. knowledge-commons/decision-records/  → Was a decision made?
-5. Zotero library                       → What does literature say?
+5. Mendeley library                       → What does literature say?
 6. technology-radar/radar.md            → What's the current status?
 7. → Still nothing? Create backlog entry.
 ```

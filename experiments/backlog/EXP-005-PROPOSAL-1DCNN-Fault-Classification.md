@@ -19,7 +19,7 @@ Depends on: EXP-002, EXP-003 (labelled data), EXP-004 (baseline performance to b
 
 References:
 - Technology Radar: 1D-CNN currently at "Assess"
-- Zotero library: [assign relevant papers on 1D-CNN for fault classification]
+- Mendeley library: [assign relevant papers on 1D-CNN for fault classification]
 
 ## Method
 

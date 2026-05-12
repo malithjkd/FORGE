@@ -37,3 +37,35 @@ List 2–3 follow-on experiments this result suggests, with brief rationale.
 ## Open Questions
 
 What questions remain unanswered?
+
+## Retrospective
+
+### What went well?
+- [List positives — even from failed experiments]
+
+### What didn't go well?
+- [List problems — be specific and factual]
+
+### What would we do differently?
+- [List concrete changes for next time]
+
+### What did we learn that we didn't expect?
+- [Unexpected insights — often the most valuable output]
+
+## FAIR Compliance Checklist
+
+> Complete this section if the experiment produced or modified any data.
+
+- [ ] Dataset has unique identifier (DVC hash or Zenodo DOI)
+- [ ] Rich metadata (title, creator, date, description, license)
+- [ ] Access method documented (DVC pull command or Zenodo URL)
+- [ ] Standard format used (HDF5 / Parquet / CSV)
+- [ ] Provenance statement included (Git commit, DVC version, pipeline)
+- [ ] License declared
+- [ ] Contact info for reuse questions
+
+## ISO 13374 Layer Output (Optional)
+
+| ISO Layer | Output Produced | Location |
+|-----------|----------------|----------|
+| Layer [N] | [description] | [path] |

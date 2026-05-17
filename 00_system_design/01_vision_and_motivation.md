@@ -3,15 +3,15 @@
 > **Document Status:** Founding Vision Document  
 > **Author:** Malith Jayawardhana (MJ)  
 > **Date:** 2026-05-04  
-> **Purpose:** Captures the original thinking behind why PBA needs a research management system, not just a project plan
+> **Purpose:** Captures the original thinking behind why the organisation needs a research management system, not just a project plan
 
 ---
 
 ## 1. Context
 
-We are collaborating with the University of Moratuwa (UoM), Sri Lanka, to undertake two master's research projects as part of building a three-person internal development team. Each project runs for 12 months. Under our agreement, PBA provides the initial guidance — the problem statement, available facilities and resources, and our expected deliverables. The university selects two master's students, each assigned a three-person mentoring panel. The students then conduct their own literature reviews and select suitable research paths to achieve our goals.
+We are collaborating with a university partner to undertake two master's research projects as part of building an internal development team. Each project runs for 12 months. Under our agreement, the organisation provides the initial guidance — the problem statement, available facilities and resources, and our expected deliverables. The university selects two master's students, each assigned a mentoring panel. The students then conduct their own literature reviews and select suitable research paths to achieve our goals.
 
-I (MJ) am the one who presented this idea to upper management, secured the funding, and am managing the project from the PBA side. My role includes guiding the teams periodically, monitoring progress, and coordinating between the university and our company.
+The Research Lead presented this idea to upper management, secured the funding, and manages the project from the industry side. This role includes guiding the teams periodically, monitoring progress, and coordinating between the university and the organisation.
 
 ---
 

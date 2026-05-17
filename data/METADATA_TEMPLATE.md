@@ -18,7 +18,7 @@
   "dc:format": "[HDF5 / CSV / Parquet]",
   "dc:rights": "CC-BY-4.0",
   "dc:identifier": "[DOI from Zenodo or internal ID — e.g., 'https://doi.org/10.5281/zenodo.XXXXXXX']",
-  "dc:publisher": "[Organisation — e.g., 'PBA Systems']",
+  "dc:publisher": "[Organisation — e.g., 'Industry Partner']",
   "dc:contributor": ["[Additional contributor names]"],
   "dc:language": "en",
   "dc:type": "Dataset",

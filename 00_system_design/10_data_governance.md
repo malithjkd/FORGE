@@ -1,10 +1,10 @@
 # Module 6: Data Governance & IP Protection
 
 > **Document Status:** Foundation Draft — v1.0  
-> **Author:** PBA Research Operations  
+> **Author:** Research Operations  
 > **Date:** 2026-05-12  
 > **Purpose:** Define data storage, access control, IP protection, and backup policies for all FORGE research data  
-> **Context:** All research data is PBA property. Data is stored locally on PBA infrastructure. External publication of datasets requires explicit IP clearance.
+> **Context:** All research data is industry partner property. Data is stored locally on industry partner infrastructure. External publication of datasets requires explicit IP clearance.
 
 ---
 
@@ -24,11 +24,11 @@
 
 ## 1. Core Principle
 
-> **All research data generated under FORGE is the intellectual property of PBA.** Data is stored on PBA-controlled infrastructure and is not shared externally without explicit approval from the Research Lead.
+> **All research data generated under FORGE is the intellectual property of the industry partner.** Data is stored on industry partner-controlled infrastructure and is not shared externally without explicit approval from the Research Lead.
 
 This principle exists because:
-- PBA funds the research, equipment, and infrastructure
-- Data contains proprietary information about PBA precision gantry systems
+- The industry partner funds the research, equipment, and infrastructure
+- Data contains proprietary information about industry partner precision systems
 - Competitors could gain commercial advantage from raw experimental data
 - IP protection is essential for future commercialisation of predictive maintenance products
 
@@ -38,13 +38,13 @@ This principle exists because:
 
 | Classification | Description | Examples | Access Level |
 |---------------|-------------|----------|-------------|
-| **PBA Confidential** | Proprietary data that provides competitive advantage | Raw sensor data, trained model weights, customer machine configurations | PBA team only |
-| **PBA Internal** | Data shared within the FORGE project team (including university partners under NDA) | Processed feature matrices, experiment results, analysis code | FORGE team (NDA required) |
+| **Confidential** | Proprietary data that provides competitive advantage | Raw sensor data, trained model weights, customer machine configurations | Industry partner team only |
+| **Internal** | Data shared within the FORGE project team (including university partners under NDA) | Processed feature matrices, experiment results, analysis code | FORGE team (NDA required) |
 | **Public — Approved** | Data cleared for external publication | Minimal datasets for paper reproducibility, methodology descriptions | Public (after IP clearance) |
 
 ### Classification Rules
 
-1. **Default classification is PBA Internal** — all data starts here
+1. **Default classification is Internal** — all data starts here
 2. **Upgrade to Confidential** when data contains: customer-specific configurations, proprietary fault thresholds, model weights with commercial value
 3. **Downgrade to Public** only after: Research Lead review + IP clearance + stripping of proprietary details
 
@@ -54,7 +54,7 @@ This principle exists because:
 
 ```mermaid
 graph TB
-    subgraph PRIMARY["Primary Storage (PBA Local Server)"]
+    subgraph PRIMARY["Primary Storage (Local Server)"]
         DVC_P["DVC Remote Backend\n(all raw + processed data)"]
         GIT_P["Git Repository\n(code, docs, metadata)"]
     end
@@ -83,22 +83,22 @@ graph TB
 |-----------|--------------|---------|
 | **Primary Server** | Linux server with RAID storage, accessible via SSH/SFTP | DVC remote backend, primary data store |
 | **Secondary NAS** | Network-attached storage on separate physical hardware | Automated daily backup |
-| **Offsite Backup** | Encrypted external drive or cloud storage (PBA-controlled) | Disaster recovery |
-| **GitHub** | Private repository (PBA organisation) | Code, documentation, DVC pointer files |
+| **Offsite Backup** | Encrypted external drive or cloud storage (organisation-controlled) | Disaster recovery |
+| **GitHub** | Private repository (organisation) | Code, documentation, DVC pointer files |
 
 ### DVC Remote Configuration
 
 ```bash
-# Primary remote (PBA local server)
-dvc remote add -d pba-primary ssh://[server-ip]/data/forge-dvc
-dvc remote modify pba-primary user [username]
+# Primary remote (local server)
+dvc remote add -d primary ssh://[server-ip]/data/forge-dvc
+dvc remote modify primary user [username]
 
 # Backup remote (secondary NAS)
-dvc remote add pba-backup ssh://[nas-ip]/backup/forge-dvc
+dvc remote add backup ssh://[nas-ip]/backup/forge-dvc
 
 # Push to both remotes
 dvc push
-dvc push -r pba-backup
+dvc push -r backup
 ```
 
 ---
@@ -109,8 +109,8 @@ dvc push -r pba-backup
 
 | Role | Git Repo | DVC Primary | DVC Backup | Zenodo |
 |------|----------|-------------|------------|--------|
-| **Research Lead (PBA)** | Admin | Full access | Full access | Admin |
-| **PBA Software Team** | Write | Full access | Read | — |
+| **Research Lead** | Admin | Full access | Full access | Admin |
+| **Software Team** | Write | Full access | Read | — |
 | **University Student** | Write (PR-based) | Read + Write (assigned datasets) | No access | No access |
 | **Academic Supervisor** | Read | Read (via student) | No access | No access |
 | **External Reviewer** | No access | No access | No access | Public only |
@@ -129,7 +129,7 @@ dvc push -r pba-backup
 |-----------|---------|----------|
 | GitHub SSH keys | User's machine | On role change or annual |
 | DVC remote SSH keys | User's machine | On role change or annual |
-| Server admin credentials | PBA IT (password manager) | Quarterly |
+| Server admin credentials | IT (password manager) | Quarterly |
 | Zenodo API token | Research Lead only | Annual |
 
 ---
@@ -142,7 +142,7 @@ dvc push -r pba-backup
 
 | Copy | Location | Medium | Frequency | Verification |
 |------|----------|--------|-----------|-------------|
-| **Copy 1 (Primary)** | PBA local server | RAID array | Real-time | DVC integrity checks |
+| **Copy 1 (Primary)** | Local server | RAID array | Real-time | DVC integrity checks |
 | **Copy 2 (On-site backup)** | Secondary NAS | Separate hardware | Daily (automated) | Weekly spot-check |
 | **Copy 3 (Off-site)** | Encrypted external or cloud | Different physical location | Weekly | Monthly restore test |
 
@@ -179,8 +179,8 @@ gpg --encrypt --recipient [pba-admin] forge-$(date +%Y%m%d).tar.gz
 |-----------|---------------------------|------------|
 | Raw sensor data | ✅ Yes (via DVC access) | Under NDA, time-bounded access |
 | Processed features | ✅ Yes | Under NDA |
-| Analysis code | ✅ Yes (via Git) | Under NDA, PBA retains ownership |
-| Trained model weights | ❌ No | PBA Confidential — architecture only |
+| Analysis code | ✅ Yes (via Git) | Under NDA, industry partner retains ownership |
+| Trained model weights | ❌ No | Confidential — architecture only |
 | Model architecture descriptions | ✅ Yes | For thesis and publications |
 | Technique Notes | ✅ Yes | After internal review |
 | Dead-End entries | ✅ Yes | After internal review |
@@ -190,7 +190,7 @@ gpg --encrypt --recipient [pba-admin] forge-$(date +%Y%m%d).tar.gz
 - Customer machine configurations or serial numbers
 - Production deployment parameters or thresholds
 - Model weights trained on production data
-- PBA internal business strategy or roadmaps
+- Internal business strategy or roadmaps
 - Raw data from customer sites (if applicable in future)
 
 ---
@@ -285,7 +285,7 @@ stateDiagram-v2
 - [ ] Student DVC credentials revoked
 - [ ] Student GitHub access downgraded to read-only (then revoked after 30 days)
 - [ ] Knowledge transfer session completed
-- [ ] No copies of PBA Confidential data remain on student machines
+- [ ] No copies of Confidential data remain on student machines
 
 ---
 
@@ -300,4 +300,4 @@ stateDiagram-v2
 
 ---
 
-*This document defines PBA's data governance and IP protection policies for all FORGE research. Review annually or when data handling requirements change.*
+*This document defines the industry partner's data governance and IP protection policies for all FORGE research. Review annually or when data handling requirements change.*

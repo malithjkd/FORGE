@@ -1,8 +1,8 @@
 # Module 5: Research Lifecycle — The Dual-Cycle Engine
 
-> **Document Status:** Foundation Draft — v1.0  
-> **Author:** PBA Research Operations  
-> **Date:** 2026-05-12  
+> **Document Status:** Foundation Draft — v1.1  
+> **Author:** Research Operations  
+> **Date:** 2026-05-17  
 > **Purpose:** Formalise the research and production lifecycles, define how they integrate, and map them to FORGE layers, ISO 13374, and industry standards  
 > **Prerequisite:** Module 1 (Knowledge Architecture) ✅ Complete
 
@@ -32,7 +32,7 @@ The key design requirement: **the lifecycle must be project-agnostic.** It was o
 
 This lifecycle model originated from early observations about open-science research methodology (see [historical notes](#appendix-original-notes)). The raw idea identified two critical gaps:
 
-1. **No formal lifecycle** — FORGE had an experiment engine (Layer 3) but no overarching process connecting search, hypothesis, data, analysis, and publication into a coherent flow.
+1. **No formal lifecycle** — FORGE had an experiment engine (Layer 2) but no overarching process connecting search, hypothesis, data, analysis, and publication into a coherent flow.
 2. **No business integration** — Research outputs need a pathway into production. DevOps and MLOps cycles must integrate with the research cycle, not run separately.
 
 ---
@@ -86,19 +86,19 @@ flowchart TD
 
 | # | Stage | Description | Primary Output | FORGE Layer |
 |---|-------|-------------|----------------|-------------|
-| 1 | **Search & Discovery** | Identify gaps, problems, and opportunities through domain observation, customer feedback, and literature scanning | Problem statement, opportunity brief | L2 (Knowledge Commons) |
-| 2 | **Literature Review** | Systematic survey of existing knowledge using Mendeley, IEEE Xplore, Scopus, Google Scholar | Annotated bibliography, gap analysis, literature review matrix | L2 (Knowledge Commons) |
-| 3 | **Hypothesis Formation** | Define precise research questions, hypotheses, and expected outcomes | Experiment Proposal (EXP-XXX-PROPOSAL), OSF pre-registration | L3 (Experiment Engine) |
-| 4 | **Gap Identification** | Formalise what is missing in current knowledge; justify the research direction | Gap analysis document, feasibility assessment | L3 (Experiment Engine) |
-| 5 | **Study Design** | Design experimental methodology — test matrices, variables, controls, protocols | Test Protocol, sensor placement diagrams, test matrix | L3 (Experiment Engine) |
-| 6 | **Simulation** | Validate feasibility through modelling before physical experiments | Simulation results, feasibility report | L3 (Experiment Engine) |
-| 7 | **Setup & Preparation** | Acquire materials, configure equipment, calibrate sensors, prepare DAQ | Equipment checklist, calibration records, ELN entry | L1 (Data Foundation) |
-| 8 | **Data Collection** | Execute experiments under controlled conditions; real-time anomaly logging | Raw HDF5 datasets (DVC-tracked), ELN session logs | L1 (Data Foundation) |
-| 9 | **Data Documentation** | Create metadata, document anomalies, write session notes contemporaneously | metadata.json (FAIR-compliant), session notes | L1 (Data Foundation) |
-| 10 | **Data Storage & VC** | Version data with DVC, ensure 3-2-1 backup rule, tag dataset releases | DVC commits, tagged data versions | L1 (Data Foundation) |
-| 11 | **Data Analysis** | Feature extraction (FFT, RMS, kurtosis, wavelets), model training, evaluation | Feature matrices, trained models, MLflow runs | L3 (Experiment Engine) |
-| 12 | **Interpretation** | Assess statistical significance, domain meaning, and practical implications | Experiment Report (EXP-XXX-REPORT) | L3 (Experiment Engine) |
-| 13 | **Verification & Validation** | Reproducibility check (`dvc repro`), cross-validation, independent test set | V&V report, reproducibility confirmation | L3 (Experiment Engine) |
+| 1 | **Search & Discovery** | Identify gaps, problems, and opportunities through domain observation, customer feedback, and literature scanning | Problem statement, opportunity brief | L1 (Knowledge Commons) |
+| 2 | **Literature Review** | Systematic survey of existing knowledge using Mendeley, IEEE Xplore, Scopus, Google Scholar | Annotated bibliography, gap analysis, literature review matrix | L1 (Knowledge Commons) |
+| 3 | **Hypothesis Formation** | Define precise research questions, hypotheses, and expected outcomes | Experiment Proposal (EXP-XXX-PROPOSAL), OSF pre-registration | L2 (Experiment Engine) |
+| 4 | **Gap Identification** | Formalise what is missing in current knowledge; justify the research direction | Gap analysis document, feasibility assessment | L2 (Experiment Engine) |
+| 5 | **Study Design** | Design experimental methodology — test matrices, variables, controls, protocols | Test Protocol, sensor placement diagrams, test matrix | L2 (Experiment Engine) |
+| 6 | **Simulation** | Validate feasibility through modelling before physical experiments | Simulation results, feasibility report | L2 (Experiment Engine) |
+| 7 | **Setup & Preparation** | Acquire materials, configure equipment, calibrate sensors, prepare DAQ | Equipment checklist, calibration records, ELN entry | L3 (Data Foundation) |
+| 8 | **Data Collection** | Execute experiments under controlled conditions; real-time anomaly logging | Raw HDF5 datasets (DVC-tracked), ELN session logs | L3 (Data Foundation) |
+| 9 | **Data Documentation** | Create metadata, document anomalies, write session notes contemporaneously | metadata.json (FAIR-compliant), session notes | L3 (Data Foundation) |
+| 10 | **Data Storage & VC** | Version data with DVC, ensure 3-2-1 backup rule, tag dataset releases | DVC commits, tagged data versions | L3 (Data Foundation) |
+| 11 | **Data Analysis** | Feature extraction (FFT, RMS, kurtosis, wavelets), model training, evaluation | Feature matrices, trained models, MLflow runs | L2 (Experiment Engine) |
+| 12 | **Interpretation** | Assess statistical significance, domain meaning, and practical implications | Experiment Report (EXP-XXX-REPORT) | L2 (Experiment Engine) |
+| 13 | **Verification & Validation** | Reproducibility check (`dvc repro`), cross-validation, independent test set | V&V report, reproducibility confirmation | L2 (Experiment Engine) |
 | 14 | **Evaluation** | Assess production readiness against success criteria; go/no-go decision | Go/No-Go decision record (ADR), Technology Radar update | L4 (Portfolio Intelligence) |
 | 15 | **Report & Publish** | Write thesis chapters, journal papers; publish datasets on Zenodo with DOI | Thesis, papers, Zenodo datasets, code releases | L5 (Product & Delivery) |
 
@@ -231,19 +231,19 @@ graph LR
     end
 
     subgraph LAYERS["FORGE Layers"]
-        L2["Layer 2\nKnowledge Commons"]
-        L3["Layer 3\nExperiment Engine"]
-        L1["Layer 1\nData Foundation"]
-        L3b["Layer 3\nExperiment Engine"]
+        L1["Layer 1\nKnowledge Commons"]
+        L2["Layer 2\nExperiment Engine"]
+        L3["Layer 3\nData Foundation"]
+        L2b["Layer 2\nExperiment Engine"]
         L4["Layer 4\nPortfolio Intelligence"]
         L5["Layer 5\nProduct & Delivery"]
     end
 
-    S1_2 --> L2
-    S3_4 --> L3
-    S5_6 --> L3
-    S7_10 --> L1
-    S11_13 --> L3b
+    S1_2 --> L1
+    S3_4 --> L2
+    S5_6 --> L2
+    S7_10 --> L3
+    S11_13 --> L2b
     S14 --> L4
     S15 --> L5
 ```
@@ -256,13 +256,13 @@ The research lifecycle stages map to the ISO 13374-1 condition monitoring data p
 
 | Research Stage | ISO 13374 Layer | ISO Layer Name | Description |
 |----------------|-----------------|----------------|-------------|
-| 7–8: Setup & Data Collection | Layer 1 | Data Acquisition | Raw signal capture from sensors and motion controllers |
-| 9–10: Documentation & Storage | Layer 1–2 | Data Acquisition → Data Manipulation | Metadata creation, preprocessing |
-| 11: Data Analysis (preprocessing) | Layer 2 | Data Manipulation | Filtering, resampling, segmentation |
-| 11: Data Analysis (features) | Layer 3 | State Detection | Feature extraction (FFT, RMS, kurtosis) |
-| 12: Interpretation | Layer 4 | Health Assessment | Classification of wear levels |
-| 13–14: Verification & Evaluation | Layer 5 | Prognostics Assessment | RUL estimation, model validation |
-| 14: Evaluation (advisory) | Layer 6 | Advisory Generation | Maintenance recommendations |
+| 7–8: Setup & Data Collection | ISO Layer 1 | Data Acquisition | Raw signal capture from sensors and motion controllers |
+| 9–10: Documentation & Storage | ISO Layer 1–2 | Data Acquisition → Data Manipulation | Metadata creation, preprocessing |
+| 11: Data Analysis (preprocessing) | ISO Layer 2 | Data Manipulation | Filtering, resampling, segmentation |
+| 11: Data Analysis (features) | ISO Layer 3 | State Detection | Feature extraction (FFT, RMS, kurtosis) |
+| 12: Interpretation | ISO Layer 4 | Health Assessment | Classification of wear levels |
+| 13–14: Verification & Evaluation | ISO Layer 5 | Prognostics Assessment | RUL estimation, model validation |
+| 14: Evaluation (advisory) | ISO Layer 6 | Advisory Generation | Maintenance recommendations |
 
 > See [09_ISO13374_mapping.md](./09_ISO13374_mapping.md) for the complete mapping with feature tables and tool references.
 

@@ -1,7 +1,7 @@
 # Module 4: Failure Integration Loop — Structured Learning from Dead Ends
 
 > **Document Status:** Foundation Draft — v1.0  
-> **Author:** PBA Research Operations  
+> **Author:** Research Operations  
 > **Date:** 2026-05-12  
 > **Purpose:** Make failure a first-class citizen of the FORGE system through structured retrospectives, root cause analysis, and decision frameworks  
 > **Prerequisite:** Module 1 (Knowledge Architecture) ✅ Complete

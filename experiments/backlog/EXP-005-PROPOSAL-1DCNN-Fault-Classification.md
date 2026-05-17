@@ -46,7 +46,7 @@ References:
 ## Resources Required
 
 - Lab access: None (using existing datasets)
-- Compute: GPU access recommended (Google Colab free tier or PBA workstation)
+- Compute: GPU access recommended (Google Colab free tier or organisation workstation)
 - Data: Labelled datasets from EXP-002/EXP-003
 - Supervisor review: Checkpoints at architecture design and after first training run
 

@@ -54,7 +54,7 @@ graph TB
 | **Combination** | Technology Radar, ADRs, Literature integration via Mendeley | Multiple explicit knowledge sources are synthesised into strategic views |
 | **Internalisation** | Onboarding (SOP-001), Reproducing TNs, Running backlog experiments | New contributors absorb explicit knowledge and convert it back to personal tacit understanding |
 
-#### Why This Matters for PBA Specifically
+#### Why This Matters for Industry-University Partnerships
 
 Western firms tend to focus too much on explicit knowledge — documents and databases — while ignoring the tacit knowledge that lives in the heads of experienced researchers. The risk with the student collaboration is exactly this: **when the students leave, their tacit knowledge (intuitions, failure instincts, domain feel) leaves with them** unless FORGE captures it before graduation.
 
@@ -201,7 +201,7 @@ Examined 174 articles from 108 journals to identify what actually works in KM im
 
 ## 7. University-Industry Collaboration Research
 
-Three papers directly relevant to the PBA–University partnership structure:
+Three papers directly relevant to the industry–university partnership structure:
 
 ### N4S Programme Study
 
@@ -223,7 +223,7 @@ Empirical study recommending **hybrid agile-traditional approaches** for univers
 
 Covers structural enablers of effective collaboration. Notable finding: one academic in the study worked inside the industry partner's office for six months and found that **sitting in the middle of the office and hearing all the conversations allowed rapid learning of how the business actually works.**
 
-> **Practical implication:** Give students regular lab access and exposure to real PBA engineering conversations, not just formal project meetings. The informal socialisation (Nonaka's first SECI phase) is where the deepest knowledge transfer happens.
+> **Practical implication:** Give students regular lab access and exposure to real industry engineering conversations, not just formal project meetings. The informal socialisation (Nonaka's first SECI phase) is where the deepest knowledge transfer happens.
 
 ---
 

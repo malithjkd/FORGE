@@ -1,9 +1,9 @@
 # Module 3: Collaboration Protocol — University–Industry Partnership Framework
 
 > **Document Status:** Foundation Draft — v1.0  
-> **Author:** PBA Research Operations  
+> **Author:** Research Operations  
 > **Date:** 2026-05-12  
-> **Purpose:** Formalise the working interface between PBA (industry partner) and university collaborators for remote R&D team management  
+> **Purpose:** Formalise the working interface between the industry partner and university collaborators for remote R&D team management  
 > **Prerequisite:** Module 1 (Knowledge Architecture) ✅ Complete
 
 ---
@@ -24,7 +24,7 @@
 
 ## 1. Collaboration Model
 
-FORGE manages a **distributed university-industry R&D collaboration** where PBA provides funding, problem definition, equipment access, and industry context, while the university provides research talent, academic supervision, and publication pathways.
+FORGE manages a **distributed university-industry R&D collaboration** where the industry partner provides funding, problem definition, equipment access, and industry context, while the university provides research talent, academic supervision, and publication pathways.
 
 ### Design Principles
 
@@ -32,13 +32,13 @@ FORGE manages a **distributed university-industry R&D collaboration** where PBA 
 2. **Remote-first** — All processes are designed for distributed teams across timezones
 3. **Async by default** — Synchronous meetings are reserved for decisions and reviews; status updates and knowledge sharing happen asynchronously
 4. **Transparent by design** — All decisions, progress, and blockers are visible to all stakeholders via the FORGE repository
-5. **Academic freedom preserved** — Students choose their research methodology within FORGE's framework; PBA provides direction, not micro-management
+5. **Academic freedom preserved** — Students choose their research methodology within FORGE's framework; the industry partner provides direction, not micro-management
 
 ### Collaboration Structure
 
 ```mermaid
 graph TB
-    subgraph INDUSTRY["Industry Partner (PBA)"]
+    subgraph INDUSTRY["Industry Partner"]
         RL["Research Lead\n(Project Sponsor)"]
         SW["Software Team"]
         HW["Hardware/Lab Team"]
@@ -86,11 +86,11 @@ graph TB
 
 | Role | Organisation | Responsibilities |
 |------|-------------|------------------|
-| **Research Lead (MJ)** | PBA | Project sponsor, problem definition, funding, industry context, FORGE system owner, progress monitoring |
+| **Research Lead** | Industry Partner | Project sponsor, problem definition, funding, industry context, FORGE system owner, progress monitoring |
 | **Academic Panel** | University | Methodology guidance, thesis oversight, academic quality assurance, publication review |
 | **Student Researcher** | University | Experiment execution, data collection, analysis, report writing, FORGE documentation |
-| **Software Team** | PBA | Platform development (Layer 5), data pipeline tools, CI/CD |
-| **Hardware/Lab Team** | PBA | Equipment setup, sensor calibration, lab access coordination |
+| **Software Team** | Industry Partner | Platform development (Layer 5), data pipeline tools, CI/CD |
+| **Hardware/Lab Team** | Industry Partner | Equipment setup, sensor calibration, lab access coordination |
 
 ### RACI Matrix
 
@@ -180,21 +180,21 @@ Every decision made in any meeting or async discussion must be captured:
 
 | Work Product | Owner | Publication Rights | Access Control | Notes |
 |-------------|-------|-------------------|----------------|-------|
-| **Raw experimental data** | PBA | University: thesis use (with PBA approval); PBA: product use | Private repo, DVC access controlled, local server backup | Published on Zenodo only for peer-reviewed publications ||
-| **Processed/feature data** | PBA | Same as raw | Same as raw | Derived from PBA-owned raw data |
-| **Source code (analysis)** | PBA | Methodology publishable; implementation proprietary | Private repo | Student retains fork for thesis appendix |
-| **Trained ML models** | PBA | Architecture publishable; weights proprietary | PBA internal only | Student can describe architecture in thesis |
-| **Technique Notes** | PBA | Freely publishable (after review) | Public (after review) | Core knowledge contribution |
-| **Dead-End entries** | PBA | Freely publishable (after review) | Public (after review) | Learning is always shared |
-| **Thesis document** | University/Student | Student decides (subject to PBA review per project agreement) | Public after submission | PBA review window per project agreement |
+| **Raw experimental data** | Industry Partner | University: thesis use (with industry partner approval); industry partner: product use | Private repo, DVC access controlled, local server backup | Published on Zenodo only for peer-reviewed publications ||
+| **Processed/feature data** | Industry Partner | Same as raw | Same as raw | Derived from industry partner-owned raw data |
+| **Source code (analysis)** | Industry Partner | Methodology publishable; implementation proprietary | Private repo | Student retains fork for thesis appendix |
+| **Trained ML models** | Industry Partner | Architecture publishable; weights proprietary | Industry partner internal only | Student can describe architecture in thesis |
+| **Technique Notes** | Industry Partner | Freely publishable (after review) | Public (after review) | Core knowledge contribution |
+| **Dead-End entries** | Industry Partner | Freely publishable (after review) | Public (after review) | Learning is always shared |
+| **Thesis document** | University/Student | Student decides (subject to industry partner review per project agreement) | Public after submission | Industry partner review window per project agreement |
 | **Journal papers** | Joint authorship | Joint authorship required | Public after acceptance | See Publication Protocol below |
-| **FORGE system design** | PBA | Open-source (PBA decides timing) | Currently private | System architecture is PBA's IP |
+| **FORGE system design** | Industry Partner | Open-source (industry partner decides timing) | Currently private | System architecture is industry partner's IP |
 
 ### IP Protection Rules
 
 1. **ELN-first rule:** Every new idea must be recorded in the FORGE repository with a timestamp **before** it is discussed with any external party
 2. **Review-before-release:** No data, code, or documentation may be shared outside the FORGE team without Research Lead approval
-3. **30-day review window:** PBA has 30 days to review any material before university submission for publication
+3. **30-day review window:** The industry partner has 30 days to review any material before university submission for publication
 4. **NDA requirement:** All collaborators must sign an NDA before receiving repository access
 
 ---
@@ -223,16 +223,16 @@ flowchart TD
 2. **First author:** The researcher who did the primary work
 3. **Last author:** The academic supervisor (academic convention)
 4. **Corresponding author:** Agreed case-by-case (typically student for thesis-derived papers)
-5. **Acknowledgements:** PBA funding and support acknowledged in all publications
+5. **Acknowledgements:** Industry partner funding and support acknowledged in all publications
 6. **Author order disputes:** Resolved by Steering Committee
 
 ### Embargo & Pre-publication
 
-> **Note:** Embargo periods and publication review timelines are defined in the project agreement between PBA and the university. The terms below are defaults; the signed agreement takes precedence.
+> **Note:** Embargo periods and publication review timelines are defined in the project agreement between the industry partner and the university. The terms below are defaults; the signed agreement takes precedence.
 
-- **Zenodo dataset publication:** Only when required for peer-reviewed publication, and only after PBA IP review and clearance. All other data stays on local PBA infrastructure.
+- **Zenodo dataset publication:** Only when required for peer-reviewed publication, and only after industry partner IP review and clearance. All other data stays on local industry partner infrastructure.
 - **Conference presentations:** Slides reviewed by Research Lead 1 week before presentation
-- **Preprints (arXiv):** Permitted after PBA review, before peer review
+- **Preprints (arXiv):** Permitted after industry partner review, before peer review
 
 ---
 
@@ -244,7 +244,7 @@ flowchart TD
 |-----------|-------------|-------------|----------|
 | Student stuck for > 1 week | Discuss with track peer or Research Lead | Academic supervisor | Within 5 days |
 | Methodology disagreement | Document both positions in GitHub Discussion | Steering Committee | Next scheduled meeting |
-| Equipment/lab access blocked | Email Research Lead + Hardware Team | PBA management | Within 48 hours |
+| Equipment/lab access blocked | Email Research Lead + Hardware Team | Industry partner management | Within 48 hours |
 | IP concern identified | Flag in GitHub Discussion (private) | Research Lead immediately | Same day |
 | Data quality issue | Document in EXP Report, flag in standup | Track owner + supervisor | Within 1 week |
 | Scope creep / timeline risk | Update EXP Proposal with new scope | Steering Committee | Next scheduled meeting |
@@ -288,7 +288,7 @@ Per [SOP-001-onboarding.md](../sops/SOP-001-onboarding.md), plus:
 
 - [ ] Thesis outline reviewed by supervisor and Research Lead
 - [ ] Each chapter submitted for review as completed
-- [ ] PBA 30-day review triggered before university submission
+- [ ] Industry partner 30-day review triggered before university submission
 - [ ] Final IP clearance obtained
 
 ### Phase 5: Handover (Final month)
@@ -310,9 +310,9 @@ Per [SOP-001-onboarding.md](../sops/SOP-001-onboarding.md), plus:
 
 ### Strategic Direction Guardrails
 
-PBA sets the **what** (research questions, problem domain, success criteria) and **constraints** (timeline, equipment, IP boundaries). Students and supervisors choose the **how** (methodology, algorithms, experimental approach).
+The industry partner sets the **what** (research questions, problem domain, success criteria) and **constraints** (timeline, equipment, IP boundaries). Students and supervisors choose the **how** (methodology, algorithms, experimental approach).
 
-| PBA Controls | University Controls |
+| Industry Partner Controls | University Controls |
 |-------------|-------------------|
 | Research questions and priorities | Research methodology |
 | Equipment and lab access | Experiment design details |
@@ -356,4 +356,4 @@ The Research Lead should intervene only when:
 
 ---
 
-*This document defines how PBA collaborates with university partners within FORGE. It is a living document — update it as collaboration patterns evolve through practice.*
+*This document defines how the industry partner collaborates with university partners within FORGE. It is a living document — update it as collaboration patterns evolve through practice.*

@@ -42,18 +42,18 @@ graph TD
 
 | FORGE Layer | FORGE Content | ISO 13374 Layer(s) | Coverage Status |
 |-------------|---------------|---------------------|-----------------|
-| **Layer 1: Data Foundation** | Raw sensor data, HDF5 files, DVC-tracked datasets | Layer 1 (Data Acquisition) | ✅ Covered |
-| **Layer 2: Knowledge Commons** | Technique Notes for signal processing methods | Layer 2 (Data Manipulation) | ✅ Covered |
-| **Layer 3: Experiment Engine** | Feature extraction experiments, ML classification | Layer 3 (State Detection) + Layer 4 (Health Assessment) | ✅ Covered |
-| **Layer 4: Portfolio Intelligence** | Technology Radar assessing RUL techniques | Layer 5 (Prognostics Assessment) | ⚠️ Partially covered (backlog only) |
-| **Layer 5: Product & Delivery** | Customer-facing maintenance advisory tools | Layer 6 (Advisory Generation) | ⚠️ Future (no experiments yet) |
+| **FORGE Layer 1: Knowledge Commons** | Technique Notes for signal processing methods | ISO Layer 2 (Data Manipulation) | ✅ Covered |
+| **FORGE Layer 2: Experiment Engine** | Feature extraction experiments, ML classification | ISO Layer 3 (State Detection) + ISO Layer 4 (Health Assessment) | ✅ Covered |
+| **FORGE Layer 3: Data Foundation** | Raw sensor data, HDF5 files, DVC-tracked datasets | ISO Layer 1 (Data Acquisition) | ✅ Covered |
+| **FORGE Layer 4: Portfolio Intelligence** | Technology Radar assessing RUL techniques | ISO Layer 5 (Prognostics Assessment) | ⚠️ Partially covered (backlog only) |
+| **FORGE Layer 5: Product & Delivery** | Customer-facing maintenance advisory tools | ISO Layer 6 (Advisory Generation) | ⚠️ Future (no experiments yet) |
 
 ### Gap Analysis
 
 | ISO Layer | Gap | Action Required |
 |-----------|-----|-----------------|
-| Layer 5: Prognostics | No RUL experiments executed yet | EXP-005+ (proposed in backlog as "Effects-based RUL") |
-| Layer 6: Advisory | No maintenance recommendation system | Future module after validated RUL model exists |
+| ISO Layer 5: Prognostics | No RUL experiments executed yet | EXP-005+ (proposed in backlog as "Effects-based RUL") |
+| ISO Layer 6: Advisory | No maintenance recommendation system | Future module after validated RUL model exists |
 
 ---
 
@@ -61,13 +61,13 @@ graph TD
 
 | Research Lifecycle Stage | ISO 13374 Layer | What Happens |
 |--------------------------|-----------------|--------------|
-| 7–8: Setup & Data Collection | Layer 1 | Raw signals captured from gantry sensors |
-| 9–10: Documentation & Storage | Layer 1→2 | Metadata written, data preprocessed and versioned |
-| 11: Analysis (preprocessing) | Layer 2 | Filtering, resampling, segmentation applied |
-| 11: Analysis (features) | Layer 3 | FFT, RMS, kurtosis, wavelets extracted |
-| 12: Interpretation | Layer 4 | Wear state classification, fault type identification |
-| 13–14: Verification & Evaluation | Layer 5 | RUL prediction validated, production readiness assessed |
-| 14: Evaluation (advisory) | Layer 6 | Maintenance recommendations generated |
+| 7–8: Setup & Data Collection | ISO Layer 1 | Raw signals captured from gantry sensors |
+| 9–10: Documentation & Storage | ISO Layer 1→2 | Metadata written, data preprocessed and versioned |
+| 11: Analysis (preprocessing) | ISO Layer 2 | Filtering, resampling, segmentation applied |
+| 11: Analysis (features) | ISO Layer 3 | FFT, RMS, kurtosis, wavelets extracted |
+| 12: Interpretation | ISO Layer 4 | Wear state classification, fault type identification |
+| 13–14: Verification & Evaluation | ISO Layer 5 | RUL prediction validated, production readiness assessed |
+| 14: Evaluation (advisory) | ISO Layer 6 | Maintenance recommendations generated |
 
 ---
 

@@ -35,6 +35,9 @@ FORGE aligns with international standards without adding tool complexity:
 | **FAIR Data Principles** | Findable, Accessible, Interoperable, Reusable datasets | [SOP-007](./sops/SOP-007-FAIR-data-compliance.md) |
 | **PM.UIC** (University-Industry Collaboration) | Remote team governance and collaboration | [04_collaboration_protocol.md](./00_system_design/04_collaboration_protocol.md) |
 | **ISO 9001** (Quality Management) | Document control via Git, review via PR | Built into all SOPs |
+| **ISO/IEC 25010** (Software Quality) | Code quality model for review and standards | [11_software_engineering_standards.md](./00_system_design/11_software_engineering_standards.md) |
+| **IEEE 730** (Software QA) | Quality assurance via CI/CD and review | [SOP-010](./sops/SOP-010-software-development.md) |
+| **Conventional Commits** | Structured commit messages | [SOP-012](./sops/SOP-012-git-workflow.md) |
 
 ---
 
@@ -52,17 +55,18 @@ FORGE/
 │   ├── 07_indusy_standard.md
 │   ├── 08_research_lifecycle.md
 │   ├── 09_ISO13374_mapping.md
-│   └── 10_data_governance.md
-├── knowledge-commons/             → Documented understanding (Layer 2)
+│   ├── 10_data_governance.md
+│   └── 11_software_engineering_standards.md
+├── knowledge-commons/             → Documented understanding (Layer 1)
 │   ├── technique-notes/           → TN-XXX: How to do specific tasks
 │   ├── decision-records/          → ADR-XXX: Why design choices were made
 │   ├── dead-end-registry/         → DE-XXX: What was tried and didn't work
 │   └── domain-glossary.md         → Shared vocabulary
-├── experiments/                   → Operational heartbeat (Layer 3)
+├── experiments/                   → Operational heartbeat (Layer 2)
 │   ├── active/                    → In-progress experiments
 │   ├── complete/                  → Completed experiment reports
 │   └── backlog/                   → Proposed but not yet started
-├── data/                          → Data foundation (Layer 1)
+├── data/                          → Data foundation (Layer 3)
 │   ├── datasets/                  → Metadata & data cards (actual data via DVC)
 │   ├── models/                    → Model cards & checkpoint references
 │   └── METADATA_TEMPLATE.md       → FAIR-compliant metadata template
@@ -82,7 +86,13 @@ FORGE/
 │   ├── SOP-006-knowledge-retrieval.md
 │   ├── SOP-007-FAIR-data-compliance.md
 │   ├── SOP-008-collaboration-communication.md
-│   └── SOP-009-research-lifecycle.md
+│   ├── SOP-009-research-lifecycle.md
+│   ├── SOP-010-software-development.md
+│   ├── SOP-011-code-review.md
+│   ├── SOP-012-git-workflow.md
+│   ├── SOP-013-ml-model-development.md
+│   ├── SOP-014-coding-standards.md
+│   └── SOP-015-architecture-design.md
 ├── reports/                       → Formal summaries for management
 │   └── monthly/
 └── .github/                       → GitHub templates
@@ -98,9 +108,9 @@ FORGE/
 ```mermaid
 graph TB
     subgraph L5["LAYER 5: PRODUCT & DELIVERY → platform/"]
-        P1["Customer-Facing Software"]
-        P2["Hardware Tools & Prototypes"]
-        P3["API Documentation & User Guides"]
+        P1["Publications & Papers"]
+        P2["Customer-Facing Software"]
+        P3["Hardware Tools & Prototypes"]
     end
 
     subgraph L4["LAYER 4: PORTFOLIO INTELLIGENCE → technology-radar/"]
@@ -109,35 +119,35 @@ graph TB
         R3["Research Backlog"]
     end
 
-    subgraph L3["LAYER 3: EXPERIMENT ENGINE → experiments/"]
-        E1["Experiment Proposal"]
-        E2["Experiment Log"]
-        E3["Experiment Report"]
-        E4["Retrospective Entry"]
-    end
-
-    subgraph L2["LAYER 2: KNOWLEDGE COMMONS → knowledge-commons/"]
-        K1["Technique Notes - TN"]
-        K2["Architecture Decision Records - ADR"]
-        K3["Dead-End Registry - DE"]
-        K4["Domain Glossary"]
-    end
-
-    subgraph L1["LAYER 1: DATA FOUNDATION → data/"]
+    subgraph L3["LAYER 3: DATA FOUNDATION → data/"]
         D1["Raw Sensor Data"]
         D2["Labelled Fault Datasets"]
         D3["Model Checkpoints"]
         D4["Code Repository"]
     end
 
-    L1 -->|"feeds understanding"| L2
-    L2 -->|"informs design"| L3
+    subgraph L2["LAYER 2: EXPERIMENT ENGINE → experiments/"]
+        E1["Experiment Proposal"]
+        E2["Experiment Log"]
+        E3["Experiment Report"]
+        E4["Retrospective Entry"]
+    end
+
+    subgraph L1["LAYER 1: KNOWLEDGE COMMONS → knowledge-commons/"]
+        K1["Technique Notes - TN"]
+        K2["Architecture Decision Records - ADR"]
+        K3["Dead-End Registry - DE"]
+        K4["Domain Glossary"]
+    end
+
+    L1 -->|"informs design"| L2
+    L2 -->|"produces data"| L3
     L3 -->|"generates insights"| L4
     L4 -->|"directs investment"| L5
-    L5 -.->|"feedback loop"| L3
+    L5 -.->|"feedback loop"| L2
 ```
 
-> Each layer depends on the one below it and feeds the one above. Products (Layer 5) are *byproducts* of accumulated knowledge — they emerge naturally from a well-functioning system.
+> Each layer follows the **academic research process flow**: research begins with existing knowledge (Layer 1), progresses through experimentation (Layer 2) and data collection (Layer 3), is synthesised into strategic insights (Layer 4), and ultimately produces deliverables (Layer 5). Products are *byproducts* of accumulated knowledge.
 
 ---
 
@@ -147,7 +157,7 @@ graph TB
 flowchart LR
     subgraph INPUT["Knowledge Sources"]
         UNI["University Students"]
-        INT["Internal PBA Team"]
+        INT["Internal Development Team"]
         LIT["Literature & Papers"]
         CUST["Customer Feedback"]
     end
@@ -239,6 +249,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for onboarding steps and standard opera
 | [Research Lifecycle](./00_system_design/08_research_lifecycle.md) | 15-stage research lifecycle with DevOps/MLOps integration |
 | [ISO 13374 Mapping](./00_system_design/09_ISO13374_mapping.md) | FORGE ↔ ISO 13374 condition monitoring alignment |
 | [Data Governance & IP](./00_system_design/10_data_governance.md) | Data storage, backup, access control, IP protection |
+| [Software Engineering Standards](./00_system_design/11_software_engineering_standards.md) | ISO standards mapping, quality model, process maturity |
 | [Domain Glossary](./knowledge-commons/domain-glossary.md) | Shared vocabulary across all contributors |
 | [Technology Radar](./technology-radar/radar.md) | Current state of technique and tool assessment |
 | [Contributing Guide](./CONTRIBUTING.md) | How to contribute to this FORGE instance |
@@ -256,6 +267,8 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for onboarding steps and standard opera
 | Module 5: Research Lifecycle | ✅ Complete | 15-stage lifecycle, dual-cycle integration |
 | Standards Integration | ✅ Complete | ISO 13374, FAIR, PM.UIC alignment |
 | Data Governance & IP | ✅ Complete | Local storage, backup, access control, IP protection |
+| Software Engineering Standards | ✅ Complete | ISO standards, quality model, CI/CD, process maturity |
+| Software Development SOPs | ✅ Complete | SOPs 010–015: development, review, Git, ML, coding, architecture |
 
 ---
 

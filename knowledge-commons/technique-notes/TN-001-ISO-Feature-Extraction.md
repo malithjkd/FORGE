@@ -1,7 +1,7 @@
 # TN-001: ISO 13374 Feature Extraction Reference
 
 **Status:** Stable  
-**Author:** PBA Research Operations  
+**Author:** Research Operations  
 **Date:** 2026-05-12  
 **Related Experiments:** —  
 **Tags:** feature-extraction, ISO-13374, signal-processing, condition-monitoring

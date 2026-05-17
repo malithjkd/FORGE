@@ -1,6 +1,6 @@
 # Platform — Internal Software Components
 
-> This folder contains PBA's internal software team code. It is the Layer 5 (Product & Delivery) implementation, built using knowledge from FORGE's lower layers.
+> This folder contains the internal software team code. It is the Layer 5 (Product & Delivery) implementation, built using knowledge from FORGE's lower layers.
 
 ---
 

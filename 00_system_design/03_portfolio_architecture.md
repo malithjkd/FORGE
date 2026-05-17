@@ -1,7 +1,7 @@
 # Module 2: Portfolio Architecture — Multi-Track Research Management
 
 > **Document Status:** Foundation Draft — v1.0  
-> **Author:** PBA Research Operations  
+> **Author:** Research Operations  
 > **Date:** 2026-05-12  
 > **Purpose:** Replace the single linear research plan with a multi-track, parallel research portfolio managed through stage-gates, scoring, and KPIs  
 > **Prerequisite:** Module 1 (Knowledge Architecture) ✅ Complete
@@ -34,7 +34,7 @@ Portfolio Architecture provides:
 
 ### Connection to FORGE Layers
 
-Portfolio Architecture lives in **Layer 4 (Portfolio Intelligence)**. It synthesises information from all experiments (Layer 3), knowledge commons (Layer 2), and data assets (Layer 1) into strategic decisions about where to invest next.
+Portfolio Architecture lives in **Layer 4 (Portfolio Intelligence)**. It synthesises information from all experiments (Layer 2), knowledge commons (Layer 1), and data assets (Layer 3) into strategic decisions about where to invest next.
 
 ---
 
@@ -49,7 +49,7 @@ A **research track** is an independent, coherent line of investigation with its 
 | **Data Collection** | Sensor setup, fault simulation, signal acquisition, protocol design | Student 1 | EXP-001, EXP-002, EXP-003 | Active |
 | **ML Diagnosis** | Fault classification using signal features and ML models | Student 2 | EXP-004, EXP-005 | Proposed |
 | **RUL Estimation** | Remaining Useful Life prediction (Type III effects-based) | TBD | Not yet proposed | Future |
-| **Platform** | Internal software — data pipeline, feature extraction, dashboard | PBA Software Team | Ongoing | Active |
+| **Platform** | Internal software — data pipeline, feature extraction, dashboard | Industry Partner Software Team | Ongoing | Active |
 
 ### Track Design Principles
 

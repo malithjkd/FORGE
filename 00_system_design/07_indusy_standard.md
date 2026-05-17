@@ -163,12 +163,12 @@ planning              design, testing     findings             publication
 #### ISO 13374 Data Processing Chain (your pipeline maps to this)
 
 ```
-Layer 1: Data Acquisition         → Raw HDF5 files (position, velocity, current, vibration)
-Layer 2: Data Manipulation        → Preprocessing: resampling, filtering, segmentation
-Layer 3: State Detection          → Feature extraction: FFT, RMS, kurtosis, wavelet coefficients
-Layer 4: Health Assessment        → Classification: wear level 0–5
-Layer 5: Prognostics Assessment   → Remaining Useful Life (RUL) estimation
-Layer 6: Advisory Generation      → Maintenance recommendations
+ISO 13374 Layer 1: Data Acquisition         → Raw HDF5 files (position, velocity, current, vibration)
+ISO 13374 Layer 2: Data Manipulation        → Preprocessing: resampling, filtering, segmentation
+ISO 13374 Layer 3: State Detection          → Feature extraction: FFT, RMS, kurtosis, wavelet coefficients
+ISO 13374 Layer 4: Health Assessment        → Classification: wear level 0–5
+ISO 13374 Layer 5: Prognostics Assessment   → Remaining Useful Life (RUL) estimation
+ISO 13374 Layer 6: Advisory Generation      → Maintenance recommendations
 ```
 
 ---

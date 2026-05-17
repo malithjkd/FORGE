@@ -1,10 +1,10 @@
 # FORGE: Foundation for Organized Research Groups and Enterprise
-### A Knowledge Architecture & Compound Learning System for Precision Gantry Predictive Maintenance R&D
+### A Knowledge Architecture & Compound Learning System for R&D
 
-> **Document Status:** Foundation Draft — v0.1  
-> **Author:** PBA Research Operations  
+> **Document Status:** Foundation Draft — v1.1  
+> **Author:** Research Operations  
 > **Purpose:** Design blueprint for a self-sustaining, compounding R&D knowledge system  
-> **Scope:** University collaboration, internal development team, and future research contributors  
+> **Scope:** University–industry collaboration, internal development team, and future research contributors  
 
 ---
 
@@ -27,9 +27,9 @@
 
 ## 1. Purpose of This Document
 
-This document captures the **architecture for a compound, self-sustaining research and development knowledge system** built around PBA's Predictive Maintenance & Diagnosis Platform for precision gantry systems.
+This document captures the **architecture for a compound, self-sustaining research and development knowledge system** designed for university–industry R&D collaboration.
 
-The immediate trigger is a collaboration between PBA and the University of Moratuwa (Sri Lanka), which involves two master's research students supervised by an academic panel. But the ambition goes further: to build a system that outlives any single student, project, or technology choice — one that **accumulates knowledge, tolerates failure, enables parallel exploration, and continuously produces useful outputs**.
+The immediate trigger is a collaboration between an industry partner and an academic research partner, involving master's research students supervised by an academic panel. But the ambition goes further: to build a system that outlives any single student, project, or technology choice — one that **accumulates knowledge, tolerates failure, enables parallel exploration, and continuously produces useful outputs**.
 
 ### This document addresses:
 - Why a *system* is needed, not just a project plan
@@ -41,7 +41,7 @@ The immediate trigger is a collaboration between PBA and the University of Morat
 
 ### What this document does NOT address (covered in future modules):
 - Portfolio Architecture (replacing the single linear plan)
-- Collaboration Protocol (formalising university-PBA working interfaces)
+- Collaboration Protocol (formalising university–industry working interfaces)
 - Failure Integration Loop (structured retrospectives and dead-end documentation)
 
 ---
@@ -109,7 +109,7 @@ A paper dedicated to mapping the existing landscape — what has been tried, wha
 #### Research Data Repositories
 Platforms like Zenodo, Figshare, or institutional repositories allow datasets and code to be published alongside papers, with DOIs for citation.
 
-**Industry equivalent:** A structured, versioned data repository — labelled fault datasets from your PBA gantry setup. This is one of the most valuable long-term assets you can build.
+**Industry equivalent:** A structured, versioned data repository — labelled fault datasets from your experimental setup. This is one of the most valuable long-term assets you can build.
 
 ### 3.2 What Academic Practice Is Missing (That Industry Needs)
 
@@ -240,49 +240,51 @@ FORGE borrows the *structure* of academic publishing while solving these gaps.
 
 ## 5. The FORGE Architecture: System Overview
 
-FORGE is structured as five interlocking layers. Each layer depends on the one below it and feeds the one above.
+FORGE is structured as five interlocking layers that follow the **academic research process flow**. The numbering reflects how research naturally progresses: from understanding existing knowledge, through experimentation and data collection, to synthesis and delivery.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  LAYER 5: PRODUCT & DELIVERY                                    │
-│  Customer-facing software, hardware tools, prototypes           │
+│  Publications, customer software, hardware tools, prototypes    │
 ├─────────────────────────────────────────────────────────────────┤
-│  LAYER 4: PORTFOLIO INTELLIGENCE           [Future Module]      │
-│  Technology Radar, Exploration Map, RUL models, active tracks   │
+│  LAYER 4: PORTFOLIO INTELLIGENCE                                │
+│  Technology Radar, Exploration Map, strategic research backlog  │
 ├─────────────────────────────────────────────────────────────────┤
-│  LAYER 3: EXPERIMENT ENGINE                                     │
-│  Proposals → Execution → Reports → Retrospectives               │
-├─────────────────────────────────────────────────────────────────┤
-│  LAYER 2: KNOWLEDGE COMMONS                                     │
-│  Technique Notes, Architecture Docs, Dead-End Registry          │
-├─────────────────────────────────────────────────────────────────┤
-│  LAYER 1: DATA FOUNDATION                                       │
+│  LAYER 3: DATA FOUNDATION                                       │
 │  Raw data, labelled datasets, model checkpoints, code           │
+├─────────────────────────────────────────────────────────────────┤
+│  LAYER 2: EXPERIMENT ENGINE                                     │
+│  Proposals → Execution → Reports → Retrospectives              │
+├─────────────────────────────────────────────────────────────────┤
+│  LAYER 1: KNOWLEDGE COMMONS                                     │
+│  Technique Notes, Architecture Docs, Dead-End Registry          │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Layer 1: Data Foundation
-The physical assets of the system. Every sensor reading, every labelled fault event, every trained model weight, every signal processing script. Without this, nothing above it is possible. This layer is managed in **Git + versioned data storage**.
+> **Why this order?** In academic R&D, every research journey begins with **understanding what is already known** (Layer 1). This knowledge informs **experiment design** (Layer 2), which produces **data** (Layer 3). Data is synthesised into **strategic portfolio insights** (Layer 4), which ultimately guides the creation of **products, publications, and deliverables** (Layer 5). The layer numbering mirrors this natural research progression.
 
-### Layer 2: Knowledge Commons
-The *documented understanding* of what the data means and what has been tried. Written by humans, for humans. Includes:
+### Layer 1: Knowledge Commons
+The *documented understanding* — the starting point for all research. Before any experiment begins, a researcher must first understand what is already known, what has been tried, and what vocabulary the domain uses. Written by humans, for humans. Includes:
 - **Technique Notes** (how to do specific tasks)
 - **Architecture Decision Records** (why a design choice was made)
 - **Dead-End Registry** (what was tried and why it didn't work)
-- **Domain Glossary** (shared vocabulary across university and PBA)
+- **Domain Glossary** (shared vocabulary across academic and industry contributors)
 
-### Layer 3: Experiment Engine
-The operational heartbeat. Every research activity is expressed as:
-1. An **Experiment Proposal** (before work begins)
-2. An **Experiment Log** (during work)
-3. An **Experiment Report** (after work, win or lose)
+### Layer 2: Experiment Engine
+The operational heartbeat. Informed by the Knowledge Commons (Layer 1), every research activity is expressed as:
+1. An **Experiment Proposal** (before work begins — hypothesis, design, success criteria)
+2. An **Experiment Log** (during work — observations, deviations, raw results)
+3. An **Experiment Report** (after work, win or lose — outcomes and interpretation)
 4. A **Retrospective Entry** (what the team learned about the *process*, not just the outcome)
 
-### Layer 4: Portfolio Intelligence *(Future Module)*
-The strategic view. Which tracks are active? Which techniques are in Trial vs. Adopt vs. Hold? What is the current confidence in RUL estimation? This is the layer that tells you where to invest next.
+### Layer 3: Data Foundation
+The physical assets produced by experiments. Every sensor reading, every labelled fault event, every trained model weight, every signal processing script. This layer is managed in **Git + versioned data storage (DVC)** and follows FAIR data principles.
+
+### Layer 4: Portfolio Intelligence
+The strategic view that synthesises insights from data and experiments. Which tracks are active? Which techniques are in Trial vs. Adopt vs. Hold? What is the current confidence in key predictions? This layer tells you where to invest next and connects research to strategy.
 
 ### Layer 5: Product & Delivery
-Customer-facing outputs. The only layer that external customers see. Everything above it is internal infrastructure that makes Layer 5 better, faster, and more defensible over time.
+The outputs that reach external audiences. Publications, customer-facing software, hardware prototypes, and documented APIs. Everything below this layer is internal infrastructure that makes Layer 5 better, faster, and more defensible over time.
 
 ---
 
@@ -291,7 +293,7 @@ Customer-facing outputs. The only layer that external customers see. Everything 
 ```mermaid
 mindmap
   root((FORGE System))
-    Knowledge Commons
+    Layer 1 — Knowledge Commons
       Technique Notes
         Signal Processing Methods
         ML Model Recipes
@@ -305,10 +307,27 @@ mindmap
         Why They Failed
         Conditions That May Change
       Domain Glossary
-        PBA-Specific Terms
+        Domain-Specific Terms
         Academic Terms
         Shared Vocabulary
-    Data Foundation
+    Layer 2 — Experiment Engine
+      Experiment Proposal
+        Hypothesis Statement
+        Method Description
+        Success Criteria
+        Resource Estimate
+      Experiment Log
+        Daily Notes
+        Observations
+        Raw Results
+      Experiment Report
+        Outcome Summary
+        Data References
+        Next Steps
+      Retrospective Entry
+        Process Learnings
+        System Improvements
+    Layer 3 — Data Foundation
       Raw Data Repository
         Vibration Signals
         Temperature Logs
@@ -326,24 +345,7 @@ mindmap
         Signal Processing Utilities
         Feature Extraction Pipelines
         Training Scripts
-    Experiment Engine
-      Experiment Proposal
-        Hypothesis Statement
-        Method Description
-        Success Criteria
-        Resource Estimate
-      Experiment Log
-        Daily Notes
-        Observations
-        Raw Results
-      Experiment Report
-        Outcome Summary
-        Data References
-        Next Steps
-      Retrospective Entry
-        Process Learnings
-        System Improvements
-    Portfolio Intelligence
+    Layer 4 — Portfolio Intelligence
       Technology Radar
         Adopt
         Trial
@@ -357,11 +359,11 @@ mindmap
         Open Questions
         Prioritised Queue
     Contributors
-      University of Moratuwa
-        Masters Student 1
-        Masters Student 2
+      Academic Research Partner
+        Graduate Researcher 1
+        Graduate Researcher 2
         Academic Panel
-      PBA Internal
+      Industry Partner
         Software Team
         Hardware Team
         Research Coordinator
@@ -369,7 +371,11 @@ mindmap
         New Students
         Industry Partners
         Customers
-    Product Delivery
+    Layer 5 — Product Delivery
+      Publications
+        Journal Papers
+        Conference Papers
+        Thesis
       Internal Dashboard
         Health Monitoring
         Alert System
@@ -823,7 +829,7 @@ Key rule: **any decision made in a meeting or chat must be captured in a documen
 ### SOP-005: Monthly Review Meeting
 
 **Frequency:** Monthly, 90 minutes  
-**Attendees:** PBA research lead, internal team leads, university supervisor contact  
+**Attendees:** Research lead, internal team leads, university supervisor contact  
 **Note:** University students present their own track updates (this replaces ad-hoc progress chasing)
 
 **Agenda structure:**
@@ -915,13 +921,13 @@ Will cover:
 - How the Portfolio connects to the Technology Radar
 
 ### Module 3: Collaboration Protocol
-> Formalising the PBA–University of Moratuwa working interface
+> Formalising the university–industry partner working interface
 
 Will cover:
 - Defining the contribution interface (what format does university work arrive in?)
-- IP and data sharing agreements (what data can students take? What belongs to PBA?)
+- IP and data sharing agreements (what data can students take? What belongs to the industry partner?)
 - Publication protocol (how to handle academic publication of jointly-produced work)
-- Escalation paths (what happens when a student is stuck, or a supervisor disagrees with PBA's direction?)
+- Escalation paths (what happens when a student is stuck, or a supervisor disagrees with the industry partner's direction?)
 - How to maintain alignment without micromanagement
 
 ### Module 4: Failure Integration Loop
@@ -984,7 +990,7 @@ Alternative names considered:
 
 ---
 
-**Document version:** 0.1  
+**Document version:** 1.1  
 **Next review:** After Module 2 (Portfolio Architecture) is drafted  
-**Maintained by:** PBA Research Lead  
-**Repository location:** `FORGE/README-system-design.md` *(proposed)*
+**Maintained by:** Research Lead  
+**Repository location:** `FORGE/00_system_design/02_knowledge_architecture.md`

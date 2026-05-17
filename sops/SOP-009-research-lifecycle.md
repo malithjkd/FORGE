@@ -59,14 +59,14 @@ Before crossing a gate, verify you have the required deliverables:
 
 When working on Stages 7–14, tag your experiment with the applicable ISO 13374 layer(s):
 
-| Your Activity | ISO Layer |
-|---------------|-----------|
-| Collecting raw signals | Layer 1: Data Acquisition |
-| Filtering, resampling | Layer 2: Data Manipulation |
-| Extracting features (FFT, RMS) | Layer 3: State Detection |
-| Classifying wear states | Layer 4: Health Assessment |
-| Predicting remaining life | Layer 5: Prognostics |
-| Generating recommendations | Layer 6: Advisory |
+| Your Activity | ISO 13374 Layer |
+|---------------|----------------|
+| Collecting raw signals | ISO Layer 1: Data Acquisition |
+| Filtering, resampling | ISO Layer 2: Data Manipulation |
+| Extracting features (FFT, RMS) | ISO Layer 3: State Detection |
+| Classifying wear states | ISO Layer 4: Health Assessment |
+| Predicting remaining life | ISO Layer 5: Prognostics |
+| Generating recommendations | ISO Layer 6: Advisory |
 
 ---
 

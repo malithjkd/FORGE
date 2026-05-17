@@ -2,7 +2,7 @@
 
 > **Source:** [Collaboration Protocol](../00_system_design/04_collaboration_protocol.md)  
 > **Trigger:** All ongoing collaboration activities  
-> **Owner:** Research Lead (MJ) — responsible for maintaining meeting cadence
+> **Owner:** Research Lead — responsible for maintaining meeting cadence
 
 ---
 
@@ -69,7 +69,7 @@
 | Situation | Escalate To | Timeline |
 |-----------|-------------|----------|
 | Student stuck > 1 week | Academic supervisor | 5 days |
-| Equipment/lab blocked | PBA Hardware Team + Research Lead | 48 hours |
+| Equipment/lab blocked | Hardware Team + Research Lead | 48 hours |
 | IP concern | Research Lead immediately | Same day |
 | Methodology disagreement | Steering Committee | Next meeting |
 

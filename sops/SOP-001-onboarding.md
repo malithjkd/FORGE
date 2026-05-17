@@ -11,13 +11,13 @@
 ```mermaid
 flowchart TB
     subgraph UOM["University Partner"]
-        S1["MSc Student 1\n(Track: Data Collection)"]
-        S2["MSc Student 2\n(Track: ML Diagnosis)"]
-        AP["Academic Panel\n(3 supervisors)"]
+        S1["Student 1\n(Track: Data Collection)"]
+        S2["Student 2\n(Track: ML Diagnosis)"]
+        AP["Academic Panel\n(Supervisors)"]
     end
 
-    subgraph PBA["PBA Internal"]
-        RC["Research Coordinator\n(MJ)"]
+    subgraph INDUSTRY["Industry Partner"]
+        RC["Research Coordinator"]
         SW["Software Team"]
         HW["Hardware Team"]
     end

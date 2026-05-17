@@ -2,7 +2,7 @@
 
 > **Source:** Extracted from [Knowledge Architecture](../00_system_design/02_knowledge_architecture.md), Section 9  
 > **Frequency:** Monthly, 90 minutes  
-> **Attendees:** PBA research lead, internal team leads, university supervisor contact  
+> **Attendees:** Research lead, internal team leads, university supervisor contact  
 > **Note:** University students present their own track updates (this replaces ad-hoc progress chasing)
 
 ---

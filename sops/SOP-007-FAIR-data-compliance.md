@@ -27,10 +27,10 @@
 
 ### 2. Data Storage Policy
 
-> **Default: All data stays on PBA local infrastructure.** Zenodo is used **only** when a dataset must accompany a peer-reviewed publication.
+> **Default: All data stays on local infrastructure.** Zenodo is used **only** when a dataset must accompany a peer-reviewed publication.
 
 **Local storage (default):**
-- Primary: PBA local server (DVC remote backend)
+- Primary: Local server (DVC remote backend)
 - Backup: Secondary server or NAS (3-2-1 backup rule: 3 copies, 2 media types, 1 offsite)
 - Access: Controlled via DVC remote credentials
 

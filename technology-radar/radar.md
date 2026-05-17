@@ -22,30 +22,30 @@ This radar maps the current assessment of techniques, tools, and methods relevan
 
 | Technique | Ring | ISO 13374 Layer | Notes | Related Docs |
 |---|---|---|---|---|
-| FFT (Fast Fourier Transform) | Assess | Layer 2–3 | Standard first-pass frequency analysis | — |
-| Wavelet Transform | Assess | Layer 2–3 | Better temporal resolution than FFT for non-stationary signals | — |
-| SVD (Singular Value Decomposition) | Assess | Layer 3 | For feature extraction from multi-sensor data | — |
-| STFT (Short-Time Fourier Transform) | Assess | Layer 2 | Time-frequency representation | — |
-| RMS / Kurtosis / Crest Factor | Assess | Layer 2 | Time-domain statistical features | [TN-001](../knowledge-commons/technique-notes/TN-001-ISO-Feature-Extraction.md) |
-| Envelope Analysis | Assess | Layer 3 | Bearing fault harmonics via Hilbert transform | — |
+| FFT (Fast Fourier Transform) | Assess | ISO Layer 2–3 | Standard first-pass frequency analysis | — |
+| Wavelet Transform | Assess | ISO Layer 2–3 | Better temporal resolution than FFT for non-stationary signals | — |
+| SVD (Singular Value Decomposition) | Assess | ISO Layer 3 | For feature extraction from multi-sensor data | — |
+| STFT (Short-Time Fourier Transform) | Assess | ISO Layer 2 | Time-frequency representation | — |
+| RMS / Kurtosis / Crest Factor | Assess | ISO Layer 2 | Time-domain statistical features | [TN-001](../knowledge-commons/technique-notes/TN-001-ISO-Feature-Extraction.md) |
+| Envelope Analysis | Assess | ISO Layer 3 | Bearing fault harmonics via Hilbert transform | — |
 
 ## ML / Classification Methods
 
 | Technique | Ring | ISO 13374 Layer | Notes | Related Docs |
 |---|---|---|---|---|
-| k-NN | Assess | Layer 4 | Simple baseline classifier | — |
-| 1D-CNN | Assess | Layer 4 | Promising for time-series fault classification | — |
-| Autoencoder | Assess | Layer 4 | For anomaly detection (deviation from healthy baseline) | — |
-| SVM | Assess | Layer 4 | Classical approach, good for smaller datasets | — |
-| Random Forest | Assess | Layer 4 | Ensemble method, interpretable feature importance | — |
+| k-NN | Assess | ISO Layer 4 | Simple baseline classifier | — |
+| 1D-CNN | Assess | ISO Layer 4 | Promising for time-series fault classification | — |
+| Autoencoder | Assess | ISO Layer 4 | For anomaly detection (deviation from healthy baseline) | — |
+| SVM | Assess | ISO Layer 4 | Classical approach, good for smaller datasets | — |
+| Random Forest | Assess | ISO Layer 4 | Ensemble method, interpretable feature importance | — |
 
 ## Prognostics (RUL Estimation)
 
 | Technique | Ring | ISO 13374 Layer | Notes | Related Docs |
 |---|---|---|---|---|
-| Effects-based models (Type III RUL) | Assess | Layer 5 | Track degradation from initial fault to failure threshold | — |
-| LSTM for time-series | Assess | Layer 5 | Sequential degradation modelling | — |
-| Degradation trend fitting | Assess | Layer 5 | Curve fitting for health indicator trends | — |
+| Effects-based models (Type III RUL) | Assess | ISO Layer 5 | Track degradation from initial fault to failure threshold | — |
+| LSTM for time-series | Assess | ISO Layer 5 | Sequential degradation modelling | — |
+| Degradation trend fitting | Assess | ISO Layer 5 | Curve fitting for health indicator trends | — |
 
 ## Tools & Platforms
 

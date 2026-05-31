@@ -2,17 +2,17 @@
 
 ### The Philosophy of Continuity
 
-> *“If I have seen further, it is by standing on the shoulders of Giants.”*
+> *"If I have seen further, it is by standing on the shoulders of Giants."*
 >
 > — **Isaac Newton** (1642–1727)
 
 ---
-
+neve
 ## What Is FORGE?
 
 FORGE is a **reusable blueprint** for organizing R&D knowledge so that it compounds over time. Instead of treating research as a linear project with a fixed endpoint, FORGE treats **knowledge as the primary output** — products, prototypes, and tools are valuable byproducts of accumulated understanding.
 
-FORGE was created to support university coloborations with industry, but the architecture is **project-agnostic** — it can be instantiated for any R&D initiative. The theoretical framework of FORGE is grounded in the principles of [The Knowledge Creating Company](https://lumsa.it/sites/default/files/UTENTI/u95/LM51_ITA_The%20Knowledge-Creating%20Company.pdf).
+FORGE was created to support university collaborations with industry, but the architecture is **project-agnostic** — it can be instantiated for any R&D initiative. The theoretical framework is grounded in the principles of [The Knowledge Creating Company](https://lumsa.it/sites/default/files/UTENTI/u95/LM51_ITA_The%20Knowledge-Creating%20Company.pdf).
 
 ### Core Principles
 
@@ -25,19 +25,37 @@ FORGE was created to support university coloborations with industry, but the arc
 
 ---
 
+## Master Design Document
+
+All system design is consolidated into a single, comprehensive reference:
+
+> **📖 [FORGE_Master_Design.md](./FORGE_Master_Design.md)** — the complete system design (~190KB, 14 sections + 5 appendices)
+
+| Part | Sections | What It Covers |
+|------|----------|----------------|
+| **Part I — Philosophy & Foundation** | §1 Vision & Motivation, §2 Theoretical Foundations | Why FORGE exists; SECI model, ADRs, A3 Thinking, NASA LLIS |
+| **Part II — Architecture** | §3 Knowledge Architecture, §4 Portfolio Architecture | 5-layer system; stage-gates, scoring rubrics, KPIs |
+| **Part III — Process** | §5 Research Lifecycle (15 stages), §6 Failure Integration | How knowledge is produced; Persist/Pivot/Abandon framework |
+| **Part IV — Governance** | §7 Collaboration Protocol, §8 Data Governance | RACI, IP framework, publication protocol; data classification, backup |
+| **Part V — Standards & Engineering** | §9 Standards Alignment, §10 Software Engineering Standards | ISO 13374 mapping, PMBOK, FAIR; Git workflow, CI/CD, CMMI |
+| **Part VI — Operations** | §11 SOPs, §12 Tools, §13 Signal Data, §14 Building from Zero | Day-to-day operations; 15 SOPs, integrated toolchain |
+| **Appendices** | A–E | Checklists, team roles, open questions, glossary, full reference list |
+
+---
+
 ## Standards Alignment
 
 FORGE aligns with international standards without adding tool complexity:
 
-| Standard | Coverage | FORGE Document |
-|----------|----------|----------------|
-| **ISO 13374** (Condition Monitoring) | Data processing chain mapped to FORGE layers | [09_ISO13374_mapping.md](./00_system_design/09_ISO13374_mapping.md) |
-| **FAIR Data Principles** | Findable, Accessible, Interoperable, Reusable datasets | [SOP-007](./sops/SOP-007-FAIR-data-compliance.md) |
-| **PM.UIC** (University-Industry Collaboration) | Remote team governance and collaboration | [04_collaboration_protocol.md](./00_system_design/04_collaboration_protocol.md) |
+| Standard | Coverage | Master Design Section |
+|----------|----------|----------------------|
+| **ISO 13374** (Condition Monitoring) | Data processing chain mapped to FORGE layers | [§9.4 — ISO 13374 ↔ FORGE Layer Mapping](./FORGE_Master_Design.md) |
+| **FAIR Data Principles** | Findable, Accessible, Interoperable, Reusable datasets | [§8 — Data Governance](./FORGE_Master_Design.md), [SOP-007](./sops/SOP-007-FAIR-data-compliance.md) |
+| **PM.UIC** (University-Industry Collaboration) | Remote team governance and collaboration | [§7 — Collaboration Protocol](./FORGE_Master_Design.md) |
 | **ISO 9001** (Quality Management) | Document control via Git, review via PR | Built into all SOPs |
-| **ISO/IEC 25010** (Software Quality) | Code quality model for review and standards | [11_software_engineering_standards.md](./00_system_design/11_software_engineering_standards.md) |
-| **IEEE 730** (Software QA) | Quality assurance via CI/CD and review | [SOP-010](./sops/SOP-010-software-development.md) |
-| **Conventional Commits** | Structured commit messages | [SOP-012](./sops/SOP-012-git-workflow.md) |
+| **ISO/IEC 25010** (Software Quality) | Code quality model for review and standards | [§10.5 — Code Review & Quality Model](./FORGE_Master_Design.md) |
+| **IEEE 730** (Software QA) | Quality assurance via CI/CD and review | [§10.6 — CI/CD & Automation](./FORGE_Master_Design.md) |
+| **Conventional Commits** | Structured commit messages | [§10.4 — Git Workflow Standards](./FORGE_Master_Design.md) |
 
 ---
 
@@ -45,18 +63,9 @@ FORGE aligns with international standards without adding tool complexity:
 
 ```
 FORGE/
-├── 00_system_design/              → FORGE's own design documents
-│   ├── 01_vision_and_motivation.md
-│   ├── 02_knowledge_architecture.md
-│   ├── 03_portfolio_architecture.md
-│   ├── 04_collaboration_protocol.md
-│   ├── 05_failure_integration.md
-│   ├── 06_reference_reading.md
-│   ├── 07_indusy_standard.md
-│   ├── 08_research_lifecycle.md
-│   ├── 09_ISO13374_mapping.md
-│   ├── 10_data_governance.md
-│   └── 11_software_engineering_standards.md
+├── FORGE_Master_Design.md         → Complete system design (consolidated)
+├── CONTRIBUTING.md                → How to contribute to this FORGE instance
+├── README.md                      → This file — orientation and quick reference
 ├── knowledge-commons/             → Documented understanding (Layer 1)
 │   ├── technique-notes/           → TN-XXX: How to do specific tasks
 │   ├── decision-records/          → ADR-XXX: Why design choices were made
@@ -206,53 +215,35 @@ flowchart LR
 ### For a New Project
 
 1. Clone or fork this repository
-2. Update `knowledge-commons/domain-glossary.md` with your project-specific terms
-3. Write your first Experiment Proposal using the template in `experiments/`
-4. Populate the Technology Radar with your current landscape
-5. Follow `CONTRIBUTING.md` for onboarding new team members
+2. Read the [FORGE_Master_Design.md](./FORGE_Master_Design.md) — at minimum, §1 (Vision) and §3 (Architecture)
+3. Update `knowledge-commons/domain-glossary.md` with your project-specific terms
+4. Write your first Experiment Proposal using the template in `experiments/`
+5. Populate the Technology Radar with your current landscape
+6. Follow [CONTRIBUTING.md](./CONTRIBUTING.md) for onboarding new team members
 
 ### For Contributors
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for onboarding steps and standard operating procedures.
 
-### For Quick Reference
+### Quick Reference
 
 | I want to... | Go to... |
 |--------------|----------|
-| Understand the vision | [01_vision_and_motivation.md](./00_system_design/01_vision_and_motivation.md) |
-| Read the full architecture | [02_knowledge_architecture.md](./00_system_design/02_knowledge_architecture.md) |
-| Understand the research lifecycle | [08_research_lifecycle.md](./00_system_design/08_research_lifecycle.md) |
-| Check ISO 13374 alignment | [09_ISO13374_mapping.md](./00_system_design/09_ISO13374_mapping.md) |
-| Look up a term | [domain-glossary.md](./knowledge-commons/domain-glossary.md) |
+| Understand the vision | [FORGE_Master_Design.md §1](./FORGE_Master_Design.md) — Vision & Motivation |
+| Read the full architecture | [FORGE_Master_Design.md §3](./FORGE_Master_Design.md) — Knowledge Architecture |
+| Understand the research lifecycle | [FORGE_Master_Design.md §5](./FORGE_Master_Design.md) — 15-Stage Research Lifecycle |
+| Check ISO 13374 alignment | [FORGE_Master_Design.md §9.4](./FORGE_Master_Design.md) — ISO 13374 ↔ FORGE Mapping |
+| Understand collaboration rules | [FORGE_Master_Design.md §7](./FORGE_Master_Design.md) — Collaboration Protocol |
+| Check data governance | [FORGE_Master_Design.md §8](./FORGE_Master_Design.md) — Data Governance |
+| Look up a term | [Domain Glossary](./knowledge-commons/domain-glossary.md) or Appendix D |
 | Check what techniques to use | [Technology Radar](./technology-radar/radar.md) |
 | Propose an experiment | Use template in `experiments/` or [GitHub Issue Template](./.github/ISSUE_TEMPLATE/experiment_proposal.md) |
 | Check if something was tried | Search `knowledge-commons/dead-end-registry/` |
 | Find a how-to method | Search `knowledge-commons/technique-notes/` |
 | Understand a design decision | Search `knowledge-commons/decision-records/` |
-| Follow a process | See `sops/` folder |
-| Understand collaboration rules | [04_collaboration_protocol.md](./00_system_design/04_collaboration_protocol.md) |
+| Follow a process | See `sops/` folder or [FORGE_Master_Design.md §11](./FORGE_Master_Design.md) |
 | Check FAIR data compliance | [SOP-007](./sops/SOP-007-FAIR-data-compliance.md) |
-
----
-
-## Key Documents
-
-| Document | Description |
-|----------|-------------|
-| [Vision & Motivation](./00_system_design/01_vision_and_motivation.md) | Why FORGE exists — the founding thinking |
-| [Knowledge Architecture](./00_system_design/02_knowledge_architecture.md) | Full system design — layers, templates, SOPs, tooling, rollout plan |
-| [Portfolio Architecture](./00_system_design/03_portfolio_architecture.md) | Multi-track research portfolio management — stage-gates, scoring, KPIs |
-| [Collaboration Protocol](./00_system_design/04_collaboration_protocol.md) | University–industry working interface — remote team management, IP, publication |
-| [Failure Integration Loop](./00_system_design/05_failure_integration.md) | Structured failure analysis — retrospectives, persist/pivot/abandon, post-mortems |
-| [Reference Reading](./00_system_design/06_reference_reading.md) | Literature map — Nonaka SECI, Nygard ADRs, NASA LLIS, Toyota A3, ThoughtWorks Radar |
-| [Industry Standards](./00_system_design/07_indusy_standard.md) | ISO standards, tools, compliance checklists, data management reference |
-| [Research Lifecycle](./00_system_design/08_research_lifecycle.md) | 15-stage research lifecycle with DevOps/MLOps integration |
-| [ISO 13374 Mapping](./00_system_design/09_ISO13374_mapping.md) | FORGE ↔ ISO 13374 condition monitoring alignment |
-| [Data Governance & IP](./00_system_design/10_data_governance.md) | Data storage, backup, access control, IP protection |
-| [Software Engineering Standards](./00_system_design/11_software_engineering_standards.md) | ISO standards mapping, quality model, process maturity |
-| [Domain Glossary](./knowledge-commons/domain-glossary.md) | Shared vocabulary across all contributors |
-| [Technology Radar](./technology-radar/radar.md) | Current state of technique and tool assessment |
-| [Contributing Guide](./CONTRIBUTING.md) | How to contribute to this FORGE instance |
+| See compliance checklists | [FORGE_Master_Design.md Appendix A](./FORGE_Master_Design.md) |
 
 ---
 
@@ -260,15 +251,13 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for onboarding steps and standard opera
 
 | Module | Status | Description |
 |--------|--------|-------------|
-| Module 1: Knowledge Architecture | ✅ Complete | System design, templates, SOPs, tooling |
-| Module 2: Portfolio Architecture | ✅ Complete | Stage-gates, scoring, KPIs, track lifecycle |
-| Module 3: Collaboration Protocol | ✅ Complete | Remote team management, IP, publication protocol |
-| Module 4: Failure Integration Loop | ✅ Complete | Retrospectives, post-mortems, persist/pivot/abandon |
-| Module 5: Research Lifecycle | ✅ Complete | 15-stage lifecycle, dual-cycle integration |
-| Standards Integration | ✅ Complete | ISO 13374, FAIR, PM.UIC alignment |
-| Data Governance & IP | ✅ Complete | Local storage, backup, access control, IP protection |
-| Software Engineering Standards | ✅ Complete | ISO standards, quality model, CI/CD, process maturity |
-| Software Development SOPs | ✅ Complete | SOPs 010–015: development, review, Git, ML, coding, architecture |
+| Part I: Philosophy & Foundation | ✅ Complete | Vision, theoretical foundations, SECI model |
+| Part II: Architecture | ✅ Complete | 5-layer knowledge architecture, portfolio management |
+| Part III: Process | ✅ Complete | 15-stage lifecycle, failure integration |
+| Part IV: Governance | ✅ Complete | Collaboration protocol, data governance, IP |
+| Part V: Standards & Engineering | ✅ Complete | ISO alignment, software engineering standards, CMMI |
+| Part VI: Operations | ✅ Complete | SOPs, tools, signal data management, build guide |
+| Appendices | ✅ Complete | Checklists, roles, open questions, glossary, references |
 
 ---
 
@@ -281,6 +270,24 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for onboarding steps and standard opera
 | [EXP-003](./experiments/backlog/EXP-003-PROPOSAL-Data-Collection-Protocol.md) | Data Collection | Proposed | Vibration data collection protocol |
 | [EXP-004](./experiments/backlog/EXP-004-PROPOSAL-FFT-Feature-Extraction.md) | ML Diagnosis | Proposed | FFT feature extraction |
 | [EXP-005](./experiments/backlog/EXP-005-PROPOSAL-1DCNN-Fault-Classification.md) | ML Diagnosis | Proposed | 1D-CNN fault classification |
+
+---
+
+## Citing FORGE
+
+If you use or adapt the FORGE framework in your research, please cite:
+
+```
+Jayawardhana, M. (2026). FORGE: Foundation for Organized Research Groups and Enterprise —
+A Knowledge Architecture for University-Industry R&D Collaboration. GitHub.
+https://github.com/[your-username]/FORGE
+```
+
+---
+
+## License
+
+This repository is currently for **internal use only**. See the IP framework in [FORGE_Master_Design.md §7.6](./FORGE_Master_Design.md) for publication and sharing policies.
 
 ---
 

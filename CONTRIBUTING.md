@@ -4,12 +4,14 @@
 
 This guide covers how to contribute to a FORGE-managed R&D project. Whether you are a university student, an internal team member, or a future collaborator, follow these procedures to ensure your work compounds into the shared knowledge base.
 
+> **Full system design:** See [FORGE_Master_Design.md](./FORGE_Master_Design.md) for the complete architecture, standards, and governance framework.
+
 ---
 
 ## Onboarding (SOP-001)
 
-> **Full SOP:** See [sops/SOP-001-onboarding.md](./sops/SOP-001-onboarding.md) for the complete checklist.  
-> **All SOPs:** The `sops/` folder contains standalone versions of all Standard Operating Procedures (SOP-001 through SOP-006).
+> **Full SOP:** See [sops/SOP-001-onboarding.md](./sops/SOP-001-onboarding.md) for the complete checklist.
+> **All SOPs:** The `sops/` folder contains standalone versions of all Standard Operating Procedures (SOP-001 through SOP-015).
 
 ### Day 1 — Orientation
 
@@ -18,6 +20,7 @@ This guide covers how to contribute to a FORGE-managed R&D project. Whether you 
 - [ ] Obtain access to the DVC data storage (for datasets and model checkpoints)
 - [ ] Walk through the repository structure (30-minute session with the Research Coordinator)
 - [ ] Read: `README.md`, this `CONTRIBUTING.md`, and `knowledge-commons/domain-glossary.md`
+- [ ] Read: [FORGE_Master_Design.md](./FORGE_Master_Design.md) — at minimum §1 (Vision) and §3 (Architecture)
 - [ ] Read: 3 completed Experiment Reports most relevant to your assigned track
 
 ### Week 1 — Shadowing
@@ -63,7 +66,7 @@ This guide covers how to contribute to a FORGE-managed R&D project. Whether you 
 - [ ] Commit all data with DVC and push
 - [ ] Commit all code and push
 - [ ] Complete FAIR compliance checklist in the report ([SOP-007](./sops/SOP-007-FAIR-data-compliance.md))
-- [ ] Tag ISO 13374 layer(s) if applicable ([09_ISO13374_mapping.md](./00_system_design/09_ISO13374_mapping.md))
+- [ ] Tag ISO 13374 layer(s) if applicable (see [FORGE_Master_Design.md §9.4](./FORGE_Master_Design.md))
 - [ ] Update the Technology Radar if a technique was newly assessed
 - [ ] Create a Dead-End entry (`DE-XXX`) if a dead end was reached
 - [ ] Create a Technique Note (`TN-XXX`) if a reusable technique was established
@@ -80,9 +83,9 @@ stateDiagram-v2
     Proposed --> Approved: Review via PR
     Approved --> InProgress: Work begins
 
-    InProgress --> Completed: Hypothesis confirmed ✅
-    InProgress --> DeadEnd: Hypothesis refuted ❌
-    InProgress --> Inconclusive: Needs more data ⚠️
+    InProgress --> Completed: Hypothesis confirmed 
+    InProgress --> DeadEnd: Hypothesis refuted 
+    InProgress --> Inconclusive: Needs more data 
 
     Completed --> TechniqueNote: Reusable method extracted
     Completed --> ADR: Design decision documented
@@ -110,11 +113,11 @@ Every experiment produces documents that reference and feed into each other. Thi
 
 ```mermaid
 graph LR
-    EXP["EXP-XXX\nExperiment"] -->|"produces"| TN["TN-XXX\nTechnique Note"]
-    EXP -->|"produces"| DE["DE-XXX\nDead End"]
-    EXP -->|"informs"| ADR["ADR-XXX\nDecision Record"]
-    EXP -->|"updates"| RADAR["Technology\nRadar"]
-    EXP -->|"feeds"| BACKLOG["Research\nBacklog"]
+    EXP["EXP-XXX Experiment"] -->|"produces"| TN["TN-XXX Technique Note"]
+    EXP -->|"produces"| DE["DE-XXX Dead End"]
+    EXP -->|"informs"| ADR["ADR-XXX Decision Record"]
+    EXP -->|"updates"| RADAR["Technology Radar"]
+    EXP -->|"feeds"| BACKLOG["Research Backlog"]
 
     TN -->|"referenced by"| EXP
     DE -->|"prevents repeat in"| EXP
@@ -122,11 +125,11 @@ graph LR
     RADAR -->|"prioritises"| BACKLOG
     BACKLOG -->|"becomes"| EXP
 
-    LIT["Literature\n(Mendeley)"] -->|"cited in"| TN
+    LIT["Literature"] -->|"cited in"| TN
     LIT -->|"cited in"| EXP
     LIT -->|"cited in"| ADR
 
-    DATA["Datasets\n(DVC)"] -->|"used by"| EXP
+    DATA["Datasets (DVC)"] -->|"used by"| EXP
     EXP -->|"produces"| DATA
 ```
 
@@ -146,11 +149,19 @@ graph LR
 
 ## Git Workflow
 
+> For full details, see [FORGE_Master_Design.md §10.4](./FORGE_Master_Design.md) — Git Workflow Standards.
+
 1. Create a branch: `git checkout -b feat/short-description` or `git checkout -b exp/EXP-XXX-short-title`
-2. Make small, focused commits with clear messages
-3. Push and open a Pull Request against the `main` branch
+2. Make small, focused commits following **Conventional Commits** format:
+   ```
+   feat(signal): add RMS feature extraction pipeline
+   fix(data): correct sampling rate in metadata.json
+   docs(TN-003): add wavelet decomposition technique note
+   research(exp-004): initial FFT feature exploration
+   ```
+3. Push and open a Pull Request against the `develop` branch
 4. Request at least one reviewer
-5. Merge after approval
+5. Merge after approval (squash merge for feature branches, merge commit for releases)
 
 ---
 
@@ -161,18 +172,36 @@ graph LR
 3. **Templates are not optional** — Use the provided templates. They exist to ensure consistency and completeness.
 4. **Conversations are ephemeral; documents are permanent** — Any decision from a meeting or chat must be captured in a document within 48 hours.
 5. **FAIR compliance is expected** — All data must have metadata and be DVC-tracked ([SOP-007](./sops/SOP-007-FAIR-data-compliance.md)).
-6. **IP awareness** — Understand the [Collaboration Protocol](./00_system_design/04_collaboration_protocol.md) before sharing any work externally.
+6. **IP awareness** — Understand the Collaboration Protocol ([FORGE_Master_Design.md §7](./FORGE_Master_Design.md)) before sharing any work externally.
 
 ---
 
-## Additional SOPs
+## Compliance Checklists
+
+Quick-reference checklists are available in [FORGE_Master_Design.md Appendix A](./FORGE_Master_Design.md):
+
+| Checklist | When to Use |
+|-----------|-------------|
+| A.1 Project Setup | Before any university students begin work |
+| A.2 Per-Experiment | Every experiment session |
+| A.3 Weekly | Every week during active research |
+| A.4 Pre-Publication | Before submitting any paper or report |
+
+---
+
+## Standard Operating Procedures (SOPs)
 
 | SOP | Purpose |
-|-----|---------|  
+|-----|---------|
+| [SOP-001: Literature Management](./sops/SOP-001-literature-management.md) | Guidelines for managing literature |
+| [SOP-002: Experiment Execution](./sops/SOP-002-experiment-execution.md) | Guidelines for running experiments |
+| [SOP-003: Documentation](./sops/SOP-003-documentation.md) | Guidelines for documentation |
+| [SOP-004: Code Review](./sops/SOP-004-code-review.md) | ISO 25010-aligned code review checklists |
+| [SOP-005: Dead-End Management](./sops/SOP-005-dead-end-management.md) | Guidelines for managing dead ends |
+| [SOP-006: Knowledge Architecture](./sops/SOP-006-knowledge-architecture.md) | Guidelines for managing knowledge |
 | [SOP-007: FAIR Data Compliance](./sops/SOP-007-FAIR-data-compliance.md) | Data governance and metadata standards |
 | [SOP-008: Collaboration Communication](./sops/SOP-008-collaboration-communication.md) | Meeting cadence, async protocols, escalation |
 | [SOP-009: Research Lifecycle](./sops/SOP-009-research-lifecycle.md) | Navigating the 15-stage research lifecycle |
-
----
-
-*Questions? Open an issue in the repository or contact the Research Coordinator.*
+| [SOP-010: Software Development](./sops/SOP-010-software-development.md) | Development workflow and Definition of Done |
+| [SOP-011: Code Review](./sops/SOP-011-code-review.md) | ISO 25010-aligned code review checklists |
+| [SOP-012: Git Workflow](./sops/SOP-012-git-workflow.md) | Conventional Commits, SemVer, branch strategy |

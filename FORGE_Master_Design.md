@@ -102,9 +102,9 @@ The most important theoretical foundation is the **SECI Model** [3], which views
 
 ```mermaid
 graph TB
-    S["SOCIALISATION<br>(Tacit → Tacit)<br>Lab work, pair experiments,<br>monthly review discussions"] -->|"articulate"| E["EXTERNALISATION<br>(Tacit → Explicit)<br>Technique Notes, Experiment Reports,<br>Dead-End entries"]
-    E -->|"combine"| C["COMBINATION<br>(Explicit → Explicit)<br>Technology Radar, ADRs,<br>Literature Reviews"]
-    C -->|"internalise"| I["INTERNALISATION<br>(Explicit → Tacit)<br>New students reproducing TNs,<br>running experiments from proposals"]
+    S["SOCIALISATION\n(Tacit → Tacit)\nLab work, pair experiments,\nmonthly review discussions"] -->|"articulate"| E["EXTERNALISATION\n(Tacit → Explicit)\nTechnique Notes, Experiment Reports,\nDead-End entries"]
+    E -->|"combine"| C["COMBINATION\n(Explicit → Explicit)\nTechnology Radar, ADRs,\nLiterature Reviews"]
+    C -->|"internalise"| I["INTERNALISATION\n(Explicit → Tacit)\nNew students reproducing TNs,\nrunning experiments from proposals"]
     I -->|"share"| S
 
     style S fill:#0984e3,color:#fff
@@ -297,85 +297,85 @@ FORGE is structured as five interlocking layers that follow the **academic resea
 ```mermaid
 mindmap
   root((FORGE System))
-    Layer 1 — Knowledge Commons
-      Technique Notes
-        Signal Processing Methods
-        ML Model Recipes
-        Hardware Setup Guides
-      Architecture Decision Records
-        ADR Format
-        Decision Rationale
-        Alternatives Considered
-      Dead-End Registry
-        Failed Approaches
-        Why They Failed
-        Conditions That May Change
-      Domain Glossary
-        Domain-Specific Terms
-        Academic Terms
-        Shared Vocabulary
-    Layer 2 — Experiment Engine
-      Experiment Proposal
-        Hypothesis Statement
-        Method Description
-        Success Criteria
-        Resource Estimate
-      Experiment Log
-        Daily Notes
-        Observations
-        Raw Results
-      Experiment Report
-        Outcome Summary
-        Data References
-        Next Steps
-      Retrospective Entry
-        Process Learnings
-        System Improvements
-    Layer 3 — Data Foundation
-      Raw Data Repository
-        Vibration Signals
-        Temperature Logs
-        Position Error Data
-        Motor Current
-      Labelled Fault Datasets
-        Fault Type Tags
-        Severity Levels
-        Condition Metadata
-      Model Repository
-        Trained Checkpoints
-        Hyperparameter Logs
-        Performance Benchmarks
-      Code Repository
-        Signal Processing Utilities
-        Feature Extraction Pipelines
-        Training Scripts
-    Layer 4 — Portfolio Intelligence
-      Technology Radar
-        Adopt
-        Trial
-        Assess
-        Hold
-      Exploration Map
-        Active Tracks
-        Paused Tracks
-        Closed Tracks
-      Research Backlog
-        Open Questions
-        Prioritised Queue
-    Layer 5 — Product Delivery
-      Publications
-        Journal Papers
-        Conference Papers
-        Thesis
-      Internal Dashboard
-        Health Monitoring
-        Alert System
-      Customer Prototype
-        Fault Diagnosis Module
-        RUL Estimation Module
-      Documentation
-        API Reference
-        User Guides
+    node1["Layer 1 — Knowledge Commons"]
+      node2["Technique Notes"]
+        node3["Signal Processing Methods"]
+        node4["ML Model Recipes"]
+        node5["Hardware Setup Guides"]
+      node6["Architecture Decision Records"]
+        node7["ADR Format"]
+        node8["Decision Rationale"]
+        node9["Alternatives Considered"]
+      node10["Dead-End Registry"]
+        node11["Failed Approaches"]
+        node12["Why They Failed"]
+        node13["Conditions That May Change"]
+      node14["Domain Glossary"]
+        node15["Domain-Specific Terms"]
+        node16["Academic Terms"]
+        node17["Shared Vocabulary"]
+    node18["Layer 2 — Experiment Engine"]
+      node19["Experiment Proposal"]
+        node20["Hypothesis Statement"]
+        node21["Method Description"]
+        node22["Success Criteria"]
+        node23["Resource Estimate"]
+      node24["Experiment Log"]
+        node25["Daily Notes"]
+        node26["Observations"]
+        node27["Raw Results"]
+      node28["Experiment Report"]
+        node29["Outcome Summary"]
+        node30["Data References"]
+        node31["Next Steps"]
+      node32["Retrospective Entry"]
+        node33["Process Learnings"]
+        node34["System Improvements"]
+    node35["Layer 3 — Data Foundation"]
+      node36["Raw Data Repository"]
+        node37["Vibration Signals"]
+        node38["Temperature Logs"]
+        node39["Position Error Data"]
+        node40["Motor Current"]
+      node41["Labelled Fault Datasets"]
+        node42["Fault Type Tags"]
+        node43["Severity Levels"]
+        node44["Condition Metadata"]
+      node45["Model Repository"]
+        node46["Trained Checkpoints"]
+        node47["Hyperparameter Logs"]
+        node48["Performance Benchmarks"]
+      node49["Code Repository"]
+        node50["Signal Processing Utilities"]
+        node51["Feature Extraction Pipelines"]
+        node52["Training Scripts"]
+    node53["Layer 4 — Portfolio Intelligence"]
+      node54["Technology Radar"]
+        node55["Adopt"]
+        node56["Trial"]
+        node57["Assess"]
+        node58["Hold"]
+      node59["Exploration Map"]
+        node60["Active Tracks"]
+        node61["Paused Tracks"]
+        node62["Closed Tracks"]
+      node63["Research Backlog"]
+        node64["Open Questions"]
+        node65["Prioritised Queue"]
+    node66["Layer 5 — Product Delivery"]
+      node67["Publications"]
+        node68["Journal Papers"]
+        node69["Conference Papers"]
+        node70["Thesis"]
+      node71["Internal Dashboard"]
+        node72["Health Monitoring"]
+        node73["Alert System"]
+      node74["Customer Prototype"]
+        node75["Fault Diagnosis Module"]
+        node76["RUL Estimation Module"]
+      node77["Documentation"]
+        node78["API Reference"]
+        node79["User Guides"]
 ```
 
 #### 3.2 Knowledge Documents

@@ -1,0 +1,176 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- Typography & Layout ---
+\usepackage[margin=1in]{geometry} % Professional 1-inch margins
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{mathpazo} % Palatino font for a highly professional, executive look
+\usepackage{microtype} % Perfects text justification and character spacing
+\usepackage{setspace}
+\setstretch{1.15} % Slight line spacing for readability
+
+% --- Graphics & Tables ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs} % Professional tables without vertical lines
+\usepackage{enumitem} % Better control over bullet points
+
+% --- Bibliography (BibLaTeX) ---
+\usepackage[backend=biber, style=numeric-comp, sorting=none, maxnames=50]{biblatex}
+\addbibresource{refs.bib}
+\DefineBibliographyStrings{english}{phdthesis = {PhD dissertation}}
+\DefineBibliographyStrings{english}{mathesis = {Master dissertation}}
+
+% --- Hyperlinks & Cross-Referencing ---
+% MUST be loaded last in this order
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+]{hyperref}
+\usepackage[noabbrev, capitalize]{cleveref} % Smart referencing (e.g., \cref{sec:intro})
+
+\begin{document}
+
+% --- Executive Title Block ---
+\begin{center}
+    {\Large \textbf{Formal Methodology for Project Execution, Progress Tracking, and Results Documentation}}\\[1.5em]
+    % {\large \textbf{Korelege Don Malith Jayawardhana}}\\
+    % {\normalsize Lead Application Engineer}\\[0.5em]
+    {\normalsize \textit{Vector Omega (Pvt) Ltd \& University of Moratuwa Collaborative Research}}
+\end{center}
+\vspace{1em}
+
+
+% --- Main Content ---
+
+\section{Executive Summary}\label{sec:exec_sum}
+
+This document establishes the project management, progress tracking, and source code documentation methodology for joint industry-academic collaborative research projects conducted between Vector Omega (Pvt) Ltd and the University of Moratuwa (UOM). In compliance with Clause~4.6 of the Memorandum of Understanding (MOU), all project operations, data handling, and development lifecycles are governed by internationally accepted standards, specifically \textbf{ISO 21502:2020} \cite{iso21502_2020}, \textbf{ISO/IEC/IEEE 12207:2017} \cite{iso_iec_ieee_12207_2017}, and \textbf{ISO 9001:2015} \cite{iso9001_2015}. Each project initiated under the MOU will inherit these procedures as its baseline operating methodology.
+
+\section{Introduction}\label{sec:intro}
+
+Research and development initiatives operate under inherent ambiguity. Traditional linear project management frameworks are highly vulnerable to single points of failure in these settings. Also, they are poorly adapted to the creative exploration, iterative hypothesis testing, and frequent pivoting that characterise complex research \cite{marle2015limits, Jetter2015, wingate2025project}. A failed experiment under a linear plan can halt an entire programme. Under a portfolio-based plan, it becomes a documented learning that redirects resources toward more promising avenues \cite{wingate2025project}. To mitigate these execution risks, the proposed methodology adopts a systematic \emph{portfolio architecture} \cite{iso21502_2020} managed via objective \emph{phase-gate reviews} \cite{cooper2010stage, cooper2017idea, iso21502_2020}. 
+
+Rather than detailing the granular technical aspects of individual research projects, this document instructs the Project Committee on the Standard Operating Procedures (SOPs) governing project execution. These SOPs are deliberately designed to guarantee:
+
+\begin{enumerate}
+    \item \textbf{Systematic traceability}: every decision, dataset, and code change is tracked using version-controlled system \cite{iso_iec_ieee_12207_2017, iso9001_2015}.
+    \item \textbf{Transparent review mechanisms}: all progress is subject to structured milestone reviews \cite{cooper2010stage, iso21502_2020}.
+    \item \textbf{Verifiable progress evaluation}: objective scoring rubrics govern resource allocation decisions \cite{cooper2017idea, iso21502_2020}.
+\end{enumerate}
+
+To ensure that every developmental phase from initial discovery through final industrial production remains entirely auditable, peer-reviewable, and scientifically rigorous, the project lifecycle is explicitly anchored to the normative baselines provided by \textbf{ISO~21502:2020} \cite{iso21502_2020}, \textbf{ISO/IEC/IEEE~12207:2017} \cite{iso_iec_ieee_12207_2017}, and \textbf{ISO~9001:2015} \cite{iso9001_2015}.
+
+
+\section{Project Management Mechanism}\label{sec:pm}
+
+\subsection{Portfolio Architecture and Track-Based Execution}
+
+The research programme is decoupled into independent, concurrent \emph{Research Tracks} (e.g., data acquisition, algorithm development, system integration). This portfolio architecture provides resilience against the single-track vulnerabilities that that are inherent in linear R\&D plans \cite{wingate2025project}:
+
+\begin{itemize}
+    \item \textbf{Parallel Execution:} Multiple tracks operate concurrently. A blocker or negative result in one track does not stall the broader initiative \cite{cooper2010stage}.
+    \item \textbf{Sprint-Based Progress:} Execution within each track is managed in defined two-week sprints, enabling the
+          Project Committee to monitor progress at regular, predictable intervals \cite{iso21502_2020}.
+    \item \textbf{Dynamic Resource Allocation:} Resources are dynamically shifted toward tracks demonstrating the highest viability, maximising both academic output and industrial deliverables \cite{iso21502_2020, wingate2025project, cooper2017idea}.
+\end{itemize}
+
+
+\subsection{Stage-Gate Decision Model}
+
+To enforce rigorous project governance, every proposed research activity must pass through sequential decision gates. This model is adapted from Cooper's Stage-Gate system \cite{cooper2010stage, cooper2017idea} and aligns with the continued justification and viability assessment principles of ISO 21502 \cite{iso21502_2020}:
+\begin{description}
+    \item[Gate 0 --- Discovery:] Validates alignment with core academic and industrial research questions.
+    \item[Gate 1 --- Scoping:] Assesses technical feasibility and ensures resource availability.
+    \item[Gate 2 --- Go/No-Go:] Utilises a weighted scoring rubric evaluating strategic alignment, technical feasibility, and expected impact before resources are committed.
+    \item[Gate 3 --- Mid-Review:] Evaluates ongoing execution against predefined milestones and acceptance criteria.
+    \item[Gate 4 --- Completion:] Formally verifies learning outcomes, triggering publication and knowledge-capture workflows.
+\end{description}
+
+Regular progress review meetings are institutionalised as part of the core communication strategy \cite{iso21502_2020}. All review meetings yield formal minutes and tracked action items, forming an unbroken chain of evidence demonstrating how research decisions were made, how risks were mitigated, and how academic feedback was systematically integrated into the project trajectory \cite[Sec. 4.4.2 \& 9.3.3]{iso9001_2015}.
+
+
+\section{Result Documentation and Source Code Management}\label{sec:docs}
+
+\subsection{Source Code Configuration and Traceability}
+
+To satisfy Clause 4.6 of the MOU regarding source code documentation, the software development lifecycle strictly adheres to the configuration management protocols defined in ISO/IEC/IEEE 12207:2017 \cite{iso_iec_ieee_12207_2017}:
+
+\begin{itemize}
+
+    \item \textbf{Semantic Version Control:} All source code, firmware, algorithms, and trained models are managed via strict Git workflows, creating an immutable, timestamped ledger of all technical contributions. This guarantees full visibility into the software's evolution from prototype to mature product.
+    
+    \item \textbf{Conventional Commits:} Every alteration to the codebase is accompanied by a standardised, human- and machine-readable commit message (e.g., \texttt{feat:}, \texttt{fix:}, \texttt{docs:}, \texttt{refactor:}) \cite{conventionalcommits}. This practice directly supports configuration status accounting requirements \cite[Sec. 6.3.5.3]{iso_iec_ieee_12207_2017}, enabling the Project Committee to programmatically parse project history, evaluate the velocity of development phases, and trace the genesis of specific algorithms.
+    
+    \item \textbf{Branching Taxonomy:} Strict repository naming conventions separate R\&D exploration from production-ready code. Legacy techniques and experimental deviations are preserved in designated archive branches (e.g., \texttt{archive/manual-scale-calibration}), ensuring experimental reproducibility while preventing codebase pollution \cite[Sec. 7.5.3 \& 8.5.2]{iso9001_2015}.
+    
+\end{itemize}
+
+
+\subsection{Post-Execution Documentation}
+
+Upon conclusion of each experimental activity, results are formally captured in two complementary registers:
+
+\begin{itemize}
+    
+    \item \textbf{Experiment Reports:} Comprehensive summaries containing outcomes, statistical interpretations, and direct links to generated datasets and code repositories \cite[Sec. 7.5]{iso9001_2015} \cite{wilkinson2016fair}.
+    
+    \item \textbf{Dead-End Registry:} Approaches that fail to yield expected results are documented with rigorous root-cause analysis. In applied research, confirmed negative results hold equal epistemic value to successful ones, preventing future cohorts from duplicating ineffective efforts \cite[Sec. 7.18]{iso21502_2020} \cite{wingate2025project}.
+
+\end{itemize}
+
+\subsection{Data Integrity and FAIR Compliance}
+
+All research data is managed in accordance with the FAIR Guiding Principles for scientific data management \cite{wilkinson2016fair}:
+
+\begin{itemize}
+    \item \textbf{Findable:} Every dataset is assigned a persistent identifier and annotated with rich metadata.
+    \item \textbf{Accessible:} Data is retrievable via standard protocols with documented access conditions.
+    \item \textbf{Interoperable:} Standard data formats and metadata schemas are enforced across all projects.
+    \item \textbf{Reusable:} Clear licensing, detailed provenance records, and version-controlled linkage between code and data ensure long-term reusability.
+\end{itemize}
+
+Raw data is treated as strictly immutable. All datasets and trained models are versioned using Data Version Control (DVC), ensuring that every experimental result is fully reproducible from its exact data and code configuration \cite[Sec. 6.3.5]{iso_iec_ieee_12207_2017} \cite{iso9001_2015}. 
+
+\section{Alignment with International Standards}\label{sec:standards}
+
+The mechanisms described above are explicitly engineered to comply with the following internationally recognised standards:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{3.0cm} p{4cm} p{6.3cm}}
+\hline
+\textbf{Standard} & \textbf{Scope} & \textbf{Implementation} \\
+\hline
+ISO 21502:2020 \cite{iso21502_2020} &   Project, programme and portfolio management &   Track-based portfolio architecture, stage-gate decision model \& sprint-based progress reviews \\[6pt]
+ISO/IEC/IEEE 12207:2017 \cite{iso_iec_ieee_12207_2017} & Software life cycle processes & Git-based configuration management, Conventional Commits for status accounting \& branching taxonomy for traceability \\[6pt]
+ISO 9001:2015 \cite{iso9001_2015} & Quality management systems & Document control via version-controlled repositories, mandatory peer review, non-conformance logging via Dead-End Registry \& continuous improvement through retrospectives \\
+\hline
+\end{tabular}
+\caption{Mapping of project methodology to international standards.}
+\label{tab:standards}
+\end{table}
+
+\section{Review Mechanisms and Quality Assurance}\label{sec:qa}
+
+The integrity of the collaborative venture relies on continuous evaluation and quality assurance, mapped directly to the monitoring, measurement, analysis and evaluation requirements of ISO~9001:2015 \cite{iso9001_2015}:
+
+\begin{itemize}
+    \item \textbf{Mandatory Peer Review:} All software merges are subject to mandatory pull-request (PR) reviews, requiring approval from designated technical leads prior to integration. This enforces a systematic peer-review mechanism analogous to academic publication standards, ensuring that poorly documented or fundamentally flawed contributions are intercepted before affecting the primary research trajectory \cite[Sec. 6.3.8 \& 6.4.9.3]{iso_iec_ieee_12207_2017}.
+    
+    \item \textbf{Milestone Gate Reviews:} At each stage gate (Section~\ref{sec:pm}), the Project Committee formally evaluates progress against predefined acceptance criteria. These reviews produce documented minutes, action items, and go/no-go decisions that form a complete audit trail  \cite[Sec. 6.6.4]{iso21502_2020} \cite{cooper2010stage} \cite[Sec. 9.3.3]{iso9001_2015}.
+    
+    \item \textbf{Controlled Experimental Environment:} By strictly isolating experimental branches from peer-reviewed production branches, the methodology provides a highly controlled environment in which academic supervisors can assess the quality, validity, and standard compliance of research outputs with confidence in the underlying procedural architecture \cite[Sec. 6.3.5]{iso_iec_ieee_12207_2017} \cite[Sec. 8.5.2]{iso9001_2015}.
+    
+\end{itemize}
+
+% --- Bibliography ---
+\newpage
+\printbibliography
+
+\end{document}
